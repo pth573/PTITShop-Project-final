@@ -1,7 +1,7 @@
-CREATE DATABASE  IF NOT EXISTS `ptitshop7111`;
-USE `ptitshop7111`;
+CREATE DATABASE  IF NOT EXISTS `ptitshop7222`;
+USE `ptitshop7222`;
 
-DROP TABLE IF EXISTS `ptitshop7111`;
+DROP TABLE IF EXISTS `ptitshop7222`;
 
 DROP TABLE IF EXISTS `address`;
 CREATE TABLE `address` (
@@ -25,13 +25,14 @@ CREATE TABLE `article` (
   `price` double NOT NULL,
   `stock` int NOT NULL,
   `title` varchar(255) DEFAULT NULL,
+  `description` varchar(255) DEFAULT NULL,
   PRIMARY KEY (`id`)
 );
 
 
 
 LOCK TABLES `article` WRITE;
-INSERT INTO `article` VALUES (1, 'anh1' , 200, 10, 'Quần PTIT'),(2, 'anh1' , 130, 10, 'Áo PTIT'),(3, 'anh1' , 60, 10, 'Áo PTIT'),(4, 'anh1' , 20, 10, 'Áo PTIT'),(5, 'anh1' , 30, 10, 'Quần PTIT'),(6, 'anh1' , 40, 10, 'Quân PTIT'),(7, 'anh1' , 500, 10, 'Vở PTIT'),(8, 'anh1' , 234, 10, 'Quần PTIT'),(9, 'anh1' , 324, 10, 'Bút PTIT'),(10, 'anh1' , 433, 10, 'Quần PTIT');
+INSERT INTO `article` VALUES (1, 'anh1' , 200, 10, 'Quần PTIT', 'Quần'),(2, 'anh1' , 130, 10, 'Áo PTIT', 'Áo'),(3, 'anh1' , 60, 10, 'Áo PTIT', 'Quần'),(4, 'anh1' , 20, 10, 'Áo PTIT', 'Hoodie'),(5, 'anh1' , 30, 10, 'Quần PTIT', 'Quần'),(6, 'anh1' , 40, 10, 'Quân PTIT', 'Quần'),(7, 'anh1' , 500, 10, 'Vở PTIT', 'Vở'),(8, 'anh1' , 234, 10, 'Quần PTIT', 'Quần'),(9, 'anh1' , 324, 10, 'Bút PTIT', 'Bút'),(10, 'anh1' , 433, 10, 'Quần PTIT', 'Quần');
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `type`;
