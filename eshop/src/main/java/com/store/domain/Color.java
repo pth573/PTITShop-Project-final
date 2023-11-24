@@ -49,7 +49,4 @@ public class Color implements Comparable<Color> {
 	public int compareTo(Color s) {
 		return this.value.compareTo(s.getValue());		
 	}
-	
-	
-	
 }

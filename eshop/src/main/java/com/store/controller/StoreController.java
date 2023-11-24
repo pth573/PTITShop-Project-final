@@ -36,8 +36,7 @@ public class StoreController {
 		model.addAttribute("itemsperpage", 9);
 		return "store";
 	}
-	
-	
+
 	@RequestMapping("/article-detail")
 	public String articleDetail(@PathParam("id") Long id, Model model) {
 		Article article = articleService.findArticleById(id);
@@ -46,6 +45,4 @@ public class StoreController {
 		model.addAttribute("addArticleSuccess", model.asMap().get("addArticleSuccess"));
 		return "articleDetail";
 	}
-	
-
 }

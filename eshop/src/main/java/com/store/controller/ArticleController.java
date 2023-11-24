@@ -24,86 +24,86 @@ import com.store.domain.Color;
 @RequestMapping("/article")
 public class ArticleController {
 
-	@Autowired
-	private ArticleService articleService;
-	
-	@RequestMapping("/add")
-	public String addArticle(Model model) {
-		Article article = new Article();
-		model.addAttribute("article", article);
-		model.addAttribute("allColors", articleService.getAllColors());
-		model.addAttribute("allTypes", articleService.getAllTypes());
-		model.addAttribute("allCategories", articleService.getAllCategories());
-		return "addArticle";
-	}
-	
-	@RequestMapping(value="/add", method=RequestMethod.POST)
-	public String addArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
-		Article newArticle = new ArticleBuilder()
-				.withTitle(article.getTitle())
-				.stockAvailable(article.getStock())
-				.withPrice(article.getPrice())
-				.imageLink(article.getPicture())
-				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
-				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
-				.ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
-				.build();		
-		articleService.saveArticle(newArticle);	
-		return "redirect:article-list";
-	}
-	
-	@RequestMapping("/article-list")
-	public String articleList(Model model) {
-		List<Article> articles = articleService.findAllArticles();
-		model.addAttribute("articles", articles);
-		return "articleList";
-	}
-	
-	@RequestMapping("/edit")
-	public String editArticle(@RequestParam("id") Long id, Model model) {
-		Article article = articleService.findArticleById(id);
-		String preselectedColors = "";
-		for (Color color : article.getColors()) {
-			preselectedColors += (color.getValue() + ",");
-		}
-		String preselectedTypes = "";
-		for (Type type : article.getTypes()) {
-			preselectedTypes += (type.getName() + ",");
-		}
-		String preselectedCategories = "";
-		for (Category category : article.getCategories()) {
-			preselectedCategories += (category.getName() + ",");
-		}		
-		model.addAttribute("article", article);
-		model.addAttribute("preselectedColors", preselectedColors);
-		model.addAttribute("preselectedTypes", preselectedTypes);
-		model.addAttribute("preselectedCategories", preselectedCategories);
-		model.addAttribute("allColors", articleService.getAllColors());
-		model.addAttribute("allTypes", articleService.getAllTypes());
-		model.addAttribute("allCategories", articleService.getAllCategories());
-		return "editArticle";
-	}
-	
-	@RequestMapping(value="/edit", method=RequestMethod.POST)
-	public String editArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {		
-		Article newArticle = new ArticleBuilder()
-				.withTitle(article.getTitle())
-				.stockAvailable(article.getStock())
-				.withPrice(article.getPrice())
-				.imageLink(article.getPicture())
-				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
-				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
-				.ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
-				.build();
-		newArticle.setId(article.getId());
-		articleService.saveArticle(newArticle);	
-		return "redirect:article-list";
-	}
-	
-	@RequestMapping("/delete")
-	public String deleteArticle(@RequestParam("id") Long id) {
-		articleService.deleteArticleById(id);
-		return "redirect:article-list";
-	}
-	
+    @Autowired
+    private ArticleService articleService;
+
+    @RequestMapping("/add")
+    public String addArticle(Model model) {
+        Article article = new Article();
+        model.addAttribute("article", article);
+        model.addAttribute("allColors", articleService.getAllColors());
+        model.addAttribute("allTypes", articleService.getAllTypes());
+        model.addAttribute("allCategories", articleService.getAllCategories());
+        return "addArticle";
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public String addArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
+        Article newArticle = new ArticleBuilder()
+                .withTitle(article.getTitle())
+                .stockAvailable(article.getStock())
+                .withPrice(article.getPrice())
+                .imageLink(article.getPicture())
+                .color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
+                .ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
+                .ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
+                .build();
+        articleService.saveArticle(newArticle);
+        return "redirect:article-list";
+    }
+
+    @RequestMapping("/article-list")
+    public String articleList(Model model) {
+        List<Article> articles = articleService.findAllArticles();
+        model.addAttribute("articles", articles);
+        return "articleList";
+    }
+
+    @RequestMapping("/edit")
+    public String editArticle(@RequestParam("id") Long id, Model model) {
+        Article article = articleService.findArticleById(id);
+        StringBuilder preselectedColors = new StringBuilder();
+        for (Color color : article.getColors()) {
+            preselectedColors.append(color.getValue()).append(",");
+        }
+        StringBuilder preselectedTypes = new StringBuilder();
+        for (Type type : article.getTypes()) {
+            preselectedTypes.append(type.getName()).append(",");
+        }
+        StringBuilder preselectedCategories = new StringBuilder();
+        for (Category category : article.getCategories()) {
+            preselectedCategories.append(category.getName()).append(",");
+        }
+        model.addAttribute("article", article);
+        model.addAttribute("preselectedColors", preselectedColors.toString());
+        model.addAttribute("preselectedTypes", preselectedTypes.toString());
+        model.addAttribute("preselectedCategories", preselectedCategories.toString());
+        model.addAttribute("allColors", articleService.getAllColors());
+        model.addAttribute("allTypes", articleService.getAllTypes());
+        model.addAttribute("allCategories", articleService.getAllCategories());
+        return "editArticle";
+    }
+
+    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+    public String editArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
+        Article newArticle = new ArticleBuilder()
+                .withTitle(article.getTitle())
+                .stockAvailable(article.getStock())
+                .withPrice(article.getPrice())
+                .imageLink(article.getPicture())
+                .color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
+                .ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
+                .ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
+                .build();
+        newArticle.setId(article.getId());
+        articleService.saveArticle(newArticle);
+        return "redirect:article-list";
+    }
+
+    @RequestMapping("/delete")
+    public String deleteArticle(@RequestParam("id") Long id) {
+        articleService.deleteArticleById(id);
+        return "redirect:article-list";
+    }
+
 }

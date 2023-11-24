@@ -2,46 +2,44 @@ package com.store.dto;
 
 public class ArticleDTO {
 
-	private Long id;
-	private String title;
-	private double price;
-	private String picture;
-	
-	public ArticleDTO() {
-	}
+    private Long id;
+    private String title;
+    private double price;
+    private String picture;
 
-	public Long getId() {
-		return id;
-	}
+    public ArticleDTO() {
+    }
 
-	public void setId(Long id) {
-		this.id = id;
-	}
+    public Long getId() {
+        return id;
+    }
 
-	public String getTitle() {
-		return title;
-	}
+    public void setId(Long id) {
+        this.id = id;
+    }
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    public String getTitle() {
+        return title;
+    }
 
-	public double getPrice() {
-		return price;
-	}
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setPrice(double price) {
-		this.price = price;
-	}
+    public double getPrice() {
+        return price;
+    }
 
-	public String getPicture() {
-		return picture;
-	}
+    public void setPrice(double price) {
+        this.price = price;
+    }
 
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-	
-	
-	
+    public String getPicture() {
+        return picture;
+    }
+
+    public void setPicture(String picture) {
+        this.picture = picture;
+    }
+
 }

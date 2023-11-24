@@ -3,83 +3,80 @@ package com.store.form;
 import java.util.List;
 
 public class ArticleFilterForm {
-	
-	private List<String> size;
-	private List<String> category;
-	private List<String> type;
-	private Integer pricelow;
-	private Integer pricehigh;
-	private String sort;
-	private Integer page;
-	private String search;
-	
-	public ArticleFilterForm() {
-	}
 
-	public List<String> getSize() {
-		return size;
-	}
+    private List<String> size;
+    private List<String> category;
+    private List<String> type;
+    private Integer pricelow;
+    private Integer pricehigh;
+    private String sort;
+    private Integer page;
+    private String search;
 
-	public void setSize(List<String> size) {
-		this.size = size;
-	}
+    public ArticleFilterForm() {
+    }
 
-	public List<String> getCategory() {
-		return category;
-	}
+    public List<String> getSize() {
+        return size;
+    }
 
-	public void setCategory(List<String> category) {
-		this.category = category;
-	}
+    public void setSize(List<String> size) {
+        this.size = size;
+    }
 
-	public List<String> getType() {
-		return type;
-	}
+    public List<String> getCategory() {
+        return category;
+    }
 
-	public void setType(List<String> type) {
-		this.type = type;
-	}
+    public void setCategory(List<String> category) {
+        this.category = category;
+    }
 
-	public Integer getPricelow() {
-		return pricelow;
-	}
+    public List<String> getType() {
+        return type;
+    }
 
-	public void setPricelow(Integer pricelow) {
-		this.pricelow = pricelow;
-	}
+    public void setType(List<String> type) {
+        this.type = type;
+    }
 
-	public Integer getPricehigh() {
-		return pricehigh;
-	}
+    public Integer getPricelow() {
+        return pricelow;
+    }
 
-	public void setPricehigh(Integer pricehigh) {
-		this.pricehigh = pricehigh;
-	}
+    public void setPricelow(Integer pricelow) {
+        this.pricelow = pricelow;
+    }
 
-	public String getSort() {
-		return sort;
-	}
+    public Integer getPricehigh() {
+        return pricehigh;
+    }
 
-	public void setSort(String sort) {
-		this.sort = sort;
-	}
+    public void setPricehigh(Integer pricehigh) {
+        this.pricehigh = pricehigh;
+    }
 
-	public Integer getPage() {
-		return page;
-	}
+    public String getSort() {
+        return sort;
+    }
 
-	public void setPage(Integer page) {
-		this.page = page;
-	}
+    public void setSort(String sort) {
+        this.sort = sort;
+    }
 
-	public String getSearch() {
-		return search;
-	}
+    public Integer getPage() {
+        return page;
+    }
 
-	public void setSearch(String search) {
-		this.search = search;
-	}
-	
-	
-	
+    public void setPage(Integer page) {
+        this.page = page;
+    }
+
+    public String getSearch() {
+        return search;
+    }
+
+    public void setSearch(String search) {
+        this.search = search;
+    }
 }

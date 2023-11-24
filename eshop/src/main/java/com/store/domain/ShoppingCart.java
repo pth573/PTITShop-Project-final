@@ -50,6 +50,4 @@ public class ShoppingCart {
 	public void setCartItems(List<CartItem> cartItems) {
 		this.cartItems = cartItems;
 	}
-
-	
 }

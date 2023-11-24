@@ -17,7 +17,6 @@ import org.springframework.transaction.annotation.Transactional;
 import com.store.domain.Article;
 import com.store.domain.CartItem;
 import com.store.domain.Order;
-import com.store.domain.Payment;
 import com.store.domain.Shipping;
 import com.store.domain.ShoppingCart;
 import com.store.domain.User;
@@ -37,14 +36,12 @@ public class OrderServiceImpl implements OrderService {
 	@Override
 	@Transactional
 	@CacheEvict(value = "itemcount", allEntries = true)
-	public synchronized Order createOrder(ShoppingCart shoppingCart, Shipping shipping, Payment payment, User user) {
+	public synchronized Order createOrder(ShoppingCart shoppingCart, Shipping shipping, User user) {
 		Order order = new Order();
 		order.setUser(user);
-		order.setPayment(payment);
 		order.setShipping(shipping);
 		order.setOrderTotal(shoppingCart.getGrandTotal());
 		shipping.setOrder(order);
-		payment.setOrder(order);			
 		LocalDate today = LocalDate.now();
 		LocalDate estimatedDeliveryDate = today.plusDays(5);				
 		order.setOrderDate(Date.from(today.atStartOfDay(ZoneId.systemDefault()).toInstant()));

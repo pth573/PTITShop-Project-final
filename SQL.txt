@@ -144,17 +144,14 @@ CREATE TABLE `user_order` (
   `order_status` varchar(255) DEFAULT NULL,
   `order_total` decimal(19,2) DEFAULT NULL,
   `shipping_date` datetime DEFAULT NULL,
-  `payment_id` bigint DEFAULT NULL,
   `shipping_id` bigint DEFAULT NULL,
   `user_id` bigint DEFAULT NULL,
   PRIMARY KEY (`id`),
-  KEY `FKqjg5jrh5qwnhl2f9lk7n77454` (`payment_id`),
   KEY `FK1hx9xau7q5xwgxjtq63lr7eeg` (`shipping_id`),
   KEY `FKj86u1x7csa8yd68ql2y1ibrou` (`user_id`)
 );
 
 LOCK TABLES `user_order` WRITE;
-INSERT INTO `user_order` VALUES (398,'2022-01-18 00:00:00','In Progress',14998.00,'2022-01-23 00:00:00',1,1,3);
 UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `user_role`;

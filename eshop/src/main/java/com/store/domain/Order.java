@@ -32,9 +32,6 @@ public class Order {
 	
 	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
 	private Shipping shipping;
-	
-	@OneToOne(cascade=CascadeType.ALL, fetch = FetchType.LAZY)
-	private Payment payment;
 
 	@ManyToOne(fetch = FetchType.LAZY)
 	private User user;
@@ -95,14 +92,6 @@ public class Order {
 		this.shipping = shipping;
 	}
 
-	public Payment getPayment() {
-		return payment;
-	}
-
-	public void setPayment(Payment payment) {
-		this.payment = payment;
-	}
-
 	public User getUser() {
 		return user;
 	}
@@ -110,6 +99,5 @@ public class Order {
 	public void setUser(User user) {
 		this.user = user;
 	}
-	
-	
+
 }

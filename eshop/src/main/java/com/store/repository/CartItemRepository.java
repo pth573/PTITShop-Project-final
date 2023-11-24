@@ -9,10 +9,10 @@ import org.springframework.data.repository.CrudRepository;
 
 public interface CartItemRepository extends CrudRepository<CartItem, Long> {
 
-	@EntityGraph(attributePaths = { "article" })
-	List<CartItem> findAllByUserAndOrderIsNull(User user);
-	
-	void deleteAllByUserAndOrderIsNull(User user);
+    @EntityGraph(attributePaths = {"article"})
+    List<CartItem> findAllByUserAndOrderIsNull(User user);
 
-	int countDistinctByUserAndOrderIsNull(User user);
+    void deleteAllByUserAndOrderIsNull(User user);
+
+    int countDistinctByUserAndOrderIsNull(User user);
 }
