@@ -1,0 +1,202 @@
+<!doctype html>
+<html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
+<head th:replace="common/header :: common-header" />
+
+
+<body class="d-flex flex-column" >
+  <div th:replace="common/header :: navbar"> </div>
+
+  
+  <div class="jumbotron jumbotron-fluid mt-0" th:style="'background-image: url(/image/background/8.jpg);'">
+  	<div class="container">
+      <div class="row text-left py-5">   
+         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
+<!--            <h2 class="bg-warning text-dark d-inline-block p-1">Sản phẩm mới</h2>-->
+<!--             <h2 class="font-weight-bold">Sản phẩm mới</h2>-->
+            <h1 class="font-weight-bold" style="font-size: 120px">PTIT Shop</h1>
+            <a th:href="@{/store}" class="btn btn-primary rounded-pill" data-addclass-on-xs="btn-sm" style="background-color: #7a3f12; font-size: 25px">Mua ngay</a>
+          </div> 
+          </div>
+      </div>
+  </div>
+  </div>  
+   
+  
+  <section class="section py-5 ">
+    <div class="container text-center">
+      <h4 class="font-weight-bold ">Danh mục sản phẩm</h4>
+        <div class="featured-items mt-4">        
+          <div class="card card-product card-featured" th:each="article : ${articles}">
+            <div class="card-body">
+              <a th:href="@{/article-detail?id=}+${article.id}"><img class="card-img-top" th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'" alt="Card image cap"></a>
+              <a th:href="@{/article-detail?id=}+${article.id}" class="card-title" th:text="${article.title}"></a>
+              <div class="price"><span th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+   <!-- start section -->
+  <section class="section py-5 bg-white">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6 col-md-4 mb-2">
+          <div class="text-center features-card">
+            <i data-feather="truck" class="text-info"></i>
+            <h5>Giao hàng miễn phí</h5>
+            <p>Giao hàng miễn phí toàn quốc cho sinh viên PTIT</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-2">
+          <div class="text-center features-card">
+            <i data-feather="user" class="text-info"></i>
+            <h5>Hỗ trợ 24/7</h5>
+            <p>Hỗ trợ, tư vấn nhiệt tình các sản phẩm mới nhất</p>
+          </div>
+        </div>
+        <div class="col-sm-6 col-md-4 mb-2">
+          <div class="text-center features-card">
+            <i data-feather="gift" class="text-info"></i>
+            <h5>Quà tặng</h5>
+            <p>Quà tặng miễn phí cho nhiều dịp lễ, voucher giảm giá cho các thành viên VIP</p>
+          </div>
+        </div>        
+      </div>
+    </div> <!-- end container -->
+  </section> <!-- end section -->
+  
+
+  
+  <section class="section pt-5">
+    <div class="container text-center">
+      <h4 class="font-weight-bold">Sản phẩm phổ biến</h4>
+        <div id="randomImagesContainer" style="display: flex; justify-content: center;"></div>
+          <script>
+          var imagePaths = [
+<!--                 'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+          ];
+
+          function getRandomImages(arr, count) {
+              var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
+              while (i-- > min) {
+                  index = Math.floor((i + 1) * Math.random());
+                  temp = shuffled[index];
+                  shuffled[index] = shuffled[i];
+                  shuffled[i] = temp;
+              }
+              return shuffled.slice(min);
+          }
+
+          var randomImagePaths = getRandomImages(imagePaths, 5);
+
+          var imagesContainer = document.getElementById('randomImagesContainer');
+          randomImagePaths.forEach(function (imagePath, index) {
+              var imgElement = document.createElement('img');
+              imgElement.src = imagePath;
+              imgElement.alt = 'Ảnh ngẫu nhiên';
+              imgElement.style.width = '200px'; // Đặt chiều rộng của ảnh
+              imgElement.style.marginRight = '5px'; // Khoảng cách giữa các ảnh
+              imagesContainer.appendChild(imgElement);
+          });
+          </script>
+    </div>
+  </section>
+   
+  
+  <div th:replace="common/header :: footer"> </div>  
+  <div th:replace="common/header :: body-scripts"> </div>
+  
+  <script type="text/javascript">
+    $(document).ready(function(){
+      $('.featured-items').slick({
+    	  infinite: true,
+    	  slidesToShow: 4,
+    	  slidesToScroll: 4,
+    	  responsive: [
+    	    {
+    	      breakpoint: 1200,
+    	      settings: {
+    	        slidesToShow: 3,
+    	        slidesToScroll: 3,
+    	      }
+    	    },
+    	    {
+    	      breakpoint: 768,
+    	      settings: {
+    	        slidesToShow: 2,
+    	        slidesToScroll: 2
+    	      }
+    	    },
+    	    {
+    	      breakpoint: 480,
+    	      settings: {
+    	        slidesToShow: 1,
+    	        slidesToScroll: 1
+    	      }
+    	    }    	    
+    	  ]
+      })
+      .on('setPosition', function (event, slick) {
+		slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+	});
+      $('.featured-types').slick({
+    	  slidesToShow: 6,
+    	  slidesToScroll: 1,
+    	  responsive: [
+      	    {
+      	      breakpoint: 1200,
+      	      settings: {
+      	        slidesToShow: 5,
+      	        slidesToScroll: 1,
+      	      }
+      	    },
+      	    {
+      	      breakpoint: 992,
+      	      settings: {
+      	        slidesToShow: 4,
+      	        slidesToScroll: 4
+      	      }
+      	    },
+      	    {
+      	      breakpoint: 768,
+      	      settings: {
+      	        slidesToShow: 3,
+      	        slidesToScroll: 3
+      	      }
+      	    },
+      	  	{
+      	      breakpoint: 550,
+      	      settings: {
+      	        slidesToShow: 2,
+      	        slidesToScroll: 2
+      	      }
+      	    },
+      	  	{
+      	      breakpoint: 380,
+      	      settings: {
+      	        slidesToShow: 1,
+      	        slidesToScroll: 1
+      	      }
+      	    }, 
+      	  ]
+      });
+    });
+  </script>
+</body>
+</html>
