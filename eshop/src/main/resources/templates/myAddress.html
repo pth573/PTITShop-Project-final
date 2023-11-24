@@ -33,21 +33,12 @@
                 <div class="form-row">
                   <div class="form-group col-12">
                     <label for="billingAddress">Địa chỉ</label>
-                    <input type="text" class="form-control" th:name="streetAddress" th:value="${user?.address?.streetAddress}">
+                    <input type="text" id="billingAddress" class="form-control" th:name="streetAddress" th:value="${user?.address?.streetAddress}">
                   </div>
-<!--                  <div class="form-group col-6 col-sm-5">-->
-<!--                    <label for="billingCountry">Quốc gia</label>-->
-<!--                    <input type="text" class="form-control" th:name="country" th:value="${user?.address?.country}">-->
-<!--                    -->
-<!--                  </div>-->
                   <div class="form-group col-6 col-sm-5">
                     <label for="billingCity">Thành phố</label>
-                    <input type="text" class="form-control"   th:name="city" th:value="${user?.address?.city}">
+                    <input type="text" id="billingCity" class="form-control"   th:name="city" th:value="${user?.address?.city}">
                   </div>
-<!--                  <div class="form-group col-3 col-sm-2">-->
-<!--                    <label for="billingZip">ZIP Code</label>-->
-<!--                    <input type="number" class="form-control" th:name="zipCode" th:value="${user?.address?.zipCode}">-->
-<!--                  </div>-->
                 </div>
                 <div class="form-group">
                   <button type="submit" class="btn btn-primary">CẬP NHẬT ĐỊA CHỈ</button>
