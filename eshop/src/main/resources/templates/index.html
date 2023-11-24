@@ -11,8 +11,6 @@
   	<div class="container">
       <div class="row text-left py-5">   
          <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
-<!--            <h2 class="bg-warning text-dark d-inline-block p-1">Sản phẩm mới</h2>-->
-<!--             <h2 class="font-weight-bold">Sản phẩm mới</h2>-->
             <h1 class="font-weight-bold" style="font-size: 120px">PTIT Shop</h1>
             <a th:href="@{/store}" class="btn btn-primary rounded-pill" data-addclass-on-xs="btn-sm" style="background-color: #7a3f12; font-size: 25px">Mua ngay</a>
           </div> 
@@ -74,22 +72,13 @@
       <h4 class="font-weight-bold">Sản phẩm phổ biến</h4>
         <div id="randomImagesContainer" style="display: flex; justify-content: center;"></div>
           <script>
+            // Demo duong dan anh
           var imagePaths = [
-<!--                 'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-<!--                'https://images.pexels.com/photos/3573351/pexels-photo-3573351.png?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',-->
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
-             'https://i.pinimg.com/originals/7e/f3/1a/7ef31a358d8e3d10ecdfd36886cb242e.png',
+            '/image/article/pictures/602410-MLA47411235317_092021.jpg',
+            '/image/article/pictures/602410-MLA47411235317_092021.jpg',
+            '/image/article/pictures/602410-MLA47411235317_092021.jpg',
+            '/image/article/pictures/602410-MLA47411235317_092021.jpg',
+            '/image/article/pictures/602410-MLA47411235317_092021.jpg'
           ];
 
           function getRandomImages(arr, count) {
