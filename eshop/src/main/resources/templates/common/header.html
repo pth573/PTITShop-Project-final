@@ -28,7 +28,6 @@
   <link rel="stylesheet" href="/css/custom.css">
   <link rel="stylesheet" href="/css/stress.css">
 
-  
 </head>
 
 <body>
@@ -91,55 +90,79 @@
   </div>
 
   <div th:fragment="footer">
-    <div class="footer mt-5">
-      <div class="container mt-4">
-        <div class="row">
-          <div class="col-sm-6 col-lg-3 text-center pr-5">
-            <h5 class="font-weight-bold">Đăng kí</h5>
-            <p>để nhận thông tin mới nhất và voucher từ chúng tôi</p>
-            <form>
-              <div class="form-group">
-                <input type="email" class="form-control rounded-pill text-center footer-input" placeholder="Nhập email của bạn">
+    <footer class="new_footer_area bg_color">
+      <div class="new_footer_top">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-3 col-md-6">
+              <div class="f_widget company_widget wow fadeInLeft" data-wow-delay="0.2s" style="visibility: visible; animation-delay: 0.2s; animation-name: fadeInLeft;">
+                <h3 class="f-title f_600 t_color f_size_18">Liên lạc với chúng tôi</h3>
+                <p>Đừng bỏ lỡ những siêu ưu đãi của chúng tôi!</p>
+                <form action="#" class="f_subscribe_two mailchimp" method="post" novalidate="true" _lpchecked="1">
+                  <input type="text" name="EMAIL" class="form-control memail" placeholder="Email">
+                  <button class="btn btn_get btn_get_two" type="submit">Gửi ngay</button>
+                  <p class="mchimp-errmessage" style="display: none;"></p>
+                  <p class="mchimp-sucmessage" style="display: none;"></p>
+                </form>
               </div>
-              <button type="button" class="btn btn-primary btn-block rounded-pill">Đăng kí</button>
-            </form>
-          </div>          
-          <div class="col-6 col-lg-3 pl-3">
-            <h6 class="font-weight-bold">Hỗ trợ</h6>
-            <div class="list-group list-group-flush list-group-no-border list-group-sm">
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Trung tâm hỗ trợ</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Hướng dẫn mua hàng</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Vận chuyển</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Câu hỏi thường gặp</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Phương thức thanh toán</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Hình thức giao hàng</a>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.4s" style="visibility: visible; animation-delay: 0.4s; animation-name: fadeInLeft;">
+                <h3 class="f-title f_600 t_color f_size_18">Download</h3>
+                <ul class="list-unstyled f_list">
+                  <li><a href="#">Company</a></li>
+                  <li><a href="#">Android App</a></li>
+                  <li><a href="#">ios App</a></li>
+                  <li><a href="#">Desktop</a></li>
+                  <li><a href="#">Projects</a></li>
+                  <li><a href="#">My tasks</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="f_widget about-widget pl_70 wow fadeInLeft" data-wow-delay="0.6s" style="visibility: visible; animation-delay: 0.6s; animation-name: fadeInLeft;">
+                <h3 class="f-title f_600 t_color f_size_18">Help</h3>
+                <ul class="list-unstyled f_list">
+                  <li><a href="#">FAQ</a></li>
+                  <li><a href="#">Term &amp; conditions</a></li>
+                  <li><a href="#">Reporting</a></li>
+                  <li><a href="#">Documentation</a></li>
+                  <li><a href="#">Support Policy</a></li>
+                  <li><a href="#">Privacy</a></li>
+                </ul>
+              </div>
+            </div>
+            <div class="col-lg-3 col-md-6">
+              <div class="f_widget social-widget pl_70 wow fadeInLeft" data-wow-delay="0.8s" style="visibility: visible; animation-delay: 0.8s; animation-name: fadeInLeft;">
+                <h3 class="f-title f_600 t_color f_size_18">Team Solutions</h3>
+                <div class="f_social_icon">
+                  <a href="#" class="fab fa-facebook"></a>
+                  <a href="#" class="fab fa-twitter"></a>
+                  <a href="#" class="fab fa-linkedin"></a>
+                  <a href="#" class="fab fa-pinterest"></a>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-6 col-lg-3 pl-3">
-            <h6 class="font-weight-bold">PTITShop</h6>
-            <div class="list-group list-group-flush list-group-no-border list-group-sm">
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Liên hệ</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Chính sách bảo mật và điều khoản</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Thỏa thuận sử dụng</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Quy chế hoạt động</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Giới thiệu</a>
-              <a href="javascript:void(0)" class="list-group-item list-group-item-action">Dịch vụ</a>
-            </div>
-          </div>  
-          <div class="col-sm-6 col-lg-3 pl-3">
-            <h6 class="font-weight-bold ">Liên hệ chúng tôi</h6>
-            <div class="list-group list-group-flush list-group-no-border list-group-sm">
-              <span class="list-group-item"><strong>Số điện thoại: </strong>0346 016 897</span>
-              <span class="list-group-item"><strong>Email:</strong> contact@ptitshop.com</span>
-              <span class="list-group-item"><strong>Thứ 2 - Thứ 7:</strong> 8h00 - 22h00 </span>
-              <span class="list-group-item"><strong>Chủ nhật:</strong> 10h00 - 21h00 </span>
-              
-            </div>    
-          </div>        
+        </div>
+        <div class="footer_bg">
+          <div class="footer_bg_one"></div>
+          <div class="footer_bg_two"></div>
         </div>
       </div>
-    </div>
-    <div class="copyright">Copyright © 2023 PTITShop All rights reserved</div>
+      <div class="footer_bottom">
+        <div class="container">
+          <div class="row align-items-center">
+            <div class="col-lg-6 col-sm-7">
+              <p class="mb-0 f_400">© Nhóm 2 OOP Thầy Sơn Inc.. 2023 All rights reserved.</p>
+            </div>
+            <div class="col-lg-6 col-sm-5 text-right">
+              <p>Made with <i class="icon_heart"></i> in <a href="http://cakecounter.com" target="_blank">nhóm 2 OOP</a></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <div th:fragment="body-scripts">
@@ -170,7 +193,7 @@
     <script src="/js/tabs.js"></script>
     <script src="/js/popup.js"></script>
     <script src="/js/custom.js"></script>
-  
+
   </div>
 </body>
 
