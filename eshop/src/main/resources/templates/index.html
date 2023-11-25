@@ -1,7 +1,6 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
-<head th:replace="common/header :: common-header" />
-
+<head th:replace="common/header :: common-header" >
 
 <body class="d-flex flex-column" >
   <div th:replace="common/header :: navbar"> </div>
@@ -11,8 +10,8 @@
   	<div class="container">
       <div class="row text-left py-5">   
          <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
-            <h1 class="font-weight-bold" style="font-size: 120px">PTIT Shop</h1>
-            <a th:href="@{/store}" class="btn btn-primary rounded-pill" data-addclass-on-xs="btn-sm" style="background-color: #7a3f12; font-size: 25px">Mua ngay</a>
+            <h1 class="font-weight-bold" style="font-size: 120px; color: #9E505F">PTIT Shop</h1>
+            <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm" style="font-size: 25px">Mua ngay</a>
           </div> 
           </div>
       </div>
@@ -106,8 +105,7 @@
           </script>
     </div>
   </section>
-   
-  
+
   <div th:replace="common/header :: footer"> </div>  
   <div th:replace="common/header :: body-scripts"> </div>
   
