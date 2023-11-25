@@ -352,7 +352,14 @@ a {
 
 .card-product {
   text-align: center;
+  transition: all 0.25s ease;
 }
+
+.card-product:hover {
+  cursor: pointer;
+  transform: translateY(-4px);
+}
+
 .card-product .card-img-top {
   margin-bottom: 1rem;
 }
@@ -384,7 +391,7 @@ a {
 .slick-next:before {
   content: "\f105";
   font-family: "Font Awesome 5 Free";
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 30px;
   font-weight: bold;
   border-radius: 50%;
@@ -398,9 +405,9 @@ a {
 
 /* Nút prev */
 .slick-prev:before {
-  content: "\f104"; /* Thay thế bằng mã Unicode của biểu tượng < trong font-awesome */
+  content: "\f104";
   font-family: "Font Awesome 5 Free";
-  color: #FFFFFF;
+  color: #ffffff;
   font-size: 30px;
   font-weight: bold;
   border-radius: 50%;
@@ -410,6 +417,7 @@ a {
   height: 35px;
   justify-content: center;
   align-items: center;
+  transform: translateX(-10px);
 }
 
 .checkout-header {

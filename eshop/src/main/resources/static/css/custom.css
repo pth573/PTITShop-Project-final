@@ -170,9 +170,9 @@ section.categoryU {
     background: #F8D7DA;
 }
 
-section.hotProduct{
+.testimonials{
     background: #F8D7DA;
-    padding: 50px;
+    padding: 50px 0;
 }
 
 .categoryU .card-body {

@@ -12,13 +12,13 @@
         <div class="text-center py-3">
           <i data-feather="check-circle" class="text-success" width="48" height="48"></i>
           <h1>PTIT Shop xin cám ơn</h1>
-          <p>Đơn hàng đã được đặt và sẽ được xử lí nhanh nhất có thể</p>
+          <p>Đơn hàng đã được đặt và sẽ được giao sớm nhất có thể</p>
           <p class="mb-0">
             <span class="text-muted">Mã đơn hàng: </span>
             <span class="text-info">#ORD<span th:text="${order.id}"></span></span>
           </p>
           <p>
-            <span class="text-muted">Tổng đã thanh toán: </span>
+            <span class="text-muted">Tổng tiền đã thanh toán: </span>
             <span class="text-info"><span th:text="${#numbers.formatDecimal(order.orderTotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span></span>
           </p>
           <p>Đơn hàng dự tính sẽ được vận chuyển đến nơi vào <span th:text="${#dates.format(order.shippingDate, 'dd-MM-yyyy')}"></span></p>
