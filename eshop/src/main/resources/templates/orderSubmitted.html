@@ -21,7 +21,7 @@
             <span class="text-muted">Tổng đã thanh toán: </span>
             <span class="text-info"><span th:text="${#numbers.formatDecimal(order.orderTotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span></span>
           </p>
-          <p>Đơn hàng dự tính sẽ được vận chuyển đến nơi vào <span th:text="${#dates.format(order.shippingDate, 'dd-MMM-yyyy')}"></span></p>
+          <p>Đơn hàng dự tính sẽ được vận chuyển đến nơi vào <span th:text="${#dates.format(order.shippingDate, 'dd-MM-yyyy')}"></span></p>
           <a th:href="@{/store}" class="btn btn-info rounded mb-3">Tiếp tục mua hàng</a>
           <a th:href="@{/order-detail?order=}+${order.id}" class="btn btn-primary rounded mb-3">Xem đơn hàng</a>
         </div>

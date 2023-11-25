@@ -1,151 +1,234 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
-<head th:replace="common/header :: common-header"/>
+  <head th:replace="common/header :: common-header" />
 
+  <body class="d-flex flex-column">
+    <div th:replace="common/header :: navbar"></div>
 
-<body class="d-flex flex-column">
-<div th:replace="common/header :: navbar"></div>
-
-<div class="container page-content">
-    <form th:action="@{/checkout}" method="post">
+    <div class="container page-content">
+      <form th:action="@{/checkout}" method="post">
         <div class="row">
-
-            <!-- Checkout Info -->
-            <div class="col-lg-8 mb-3">
-                <div th:if="${missingRequiredField}">
-                    <h5 class="alert alert-warning">Thông tin yêu cầu còn điền thiếu</h5>
-                </div>
-                <div id="accordion">
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingOne">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link checkout-header" data-toggle="collapse"
-                                        data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    Sản phẩm <i data-feather="chevron-down" class="mb-1"></i>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseOne" class="collapse show" aria-labelledby="headingOne"
-                             data-parent="#accordion">
-                            <div class="card-body border-bottom">
-                                <div class="row align-items-center border-bottom  pb-2 pt-2"
-                                     th:each="cartItem : ${cartItemList}">
-                                    <div class="col-12 col-md-6 mb-2">
-                                        <div class="row align-items-center">
-                                            <div class="col-4">
-                                                <a th:href="@{/article-detail?id=}+${cartItem.article.id}"><img
-                                                        class="img-fluid"
-                                                        th:src="'/image/article/pictures/'+${cartItem.article.picture}+'.jpg'"
-                                                        alt="${cartItem.article.title}"></a>
-                                            </div>
-                                            <div class="col-8">
-                                                <a th:href="@{/article-detail?id=}+${cartItem.article.id}"
-                                                   class="h6 bold d-inline-block" th:text=${cartItem.article.title}></a>
-                                                <div><i data-feather="check-circle" class="text-success"></i> Còn hàng
-                                                </div>
-                                                <div><small><b>Màu sắc</b>: <span
-                                                        th:text="${cartItem.color}"></span></small></div>
-                                                <small><b>Giá 1 sản phẩm</b>: <span
-                                                        th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span></small>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-12 col-md-6 text-right">
-                                        <span>x<span th:text="${cartItem.qty}"></span> sản phẩm: </span>
-                                        <!--                      in text-info: $-->
-                                        <span class="font-weight-bold text-info"><span th:id="'price'+${cartItem.id}"
-                                                                                       th:text="${#numbers.formatDecimal(cartItem.subtotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span></span>
-                                    </div>
-                                </div>
-                                <div class="text-center mx-auto">
-                                    <small class="counter">TỔNG</small>
-                                    <h3 class="font-weight-bold"><span
-                                            th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
-                                    </h3>
-                                </div>
-                                <div class="d-flex flex-wrap justify-content-between align-items-center mt-3">
-                                    <a th:href="@{/shopping-cart/cart}" class="btn btn-info rounded-pill  "><i
-                                            data-feather="arrow-left"></i> Sửa đơn hàng</a>
-                                    <a data-toggle="collapse" data-parent="#accordion"
-                                       class="btn btn-primary rounded-pill " href="#collapseTwo">Tiếp <i
-                                            data-feather="arrow-right"></i></a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-header bg-white" id="headingTwo">
-                            <h5 class="mb-0">
-                                <button class="btn btn-link checkout-header" data-toggle="collapse"
-                                        data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    Giao hàng <i data-feather="chevron-down" class="mb-1"></i>
-                                </button>
-                            </h5>
-                        </div>
-                        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
-                            <div class="card-body border-bottom">
-                                <div class="form-row">
-                                    <div class="form-group col-12">
-                                        <label for="receiver">Tên người nhận</label>
-                                        <input type="text" class="form-control" id="receiver" name="receiver"
-                                               required="required"/>
-                                    </div>
-                                    <div class="form-group col-12">
-                                        <label for="streetAddress">Địa chỉ</label>
-                                        <input type="text" class="form-control" id="streetAddress" name="streetAddress"
-                                               required="required"/>
-                                    </div>
-                                    <div class="form-group col-12">
-                                        <label for="city">Thành phố</label> <input type="text"
-                                                                                   class="form-control" id="city"
-                                                                                   th:name="city"
-                                                                                   required="required"/>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-lg-4 offset-lg-8">
-                        <div class="card">
-                            <div class="card-header bg-white checkout-header">TỔNG ĐƠN HÀNG</div>
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between">
-                                    <span>Tổng sản phẩm</span>
-                                    <span><span
-                                            th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"> </span></span>
-                                </div>
-                                <div class="d-flex justify-content-between">
-                                    <span>Phí vận chuyển</span>
-                                    <span>0 VND</span>
-                                </div>
-                                <hr>
-                                <div class="d-flex justify-content-between">
-                                    <span>Tổng</span>
-                                    <span class="font-weight-bold"><span
-                                            th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + 'VND'}"> </span></span>
-                                </div>
-                            </div>
-                            <div class="card-footer bg-white border-top-0">
-                                <button type="submit" class="btn btn-primary rounded-pill btn-lg btn-block mt-2 mb-3">
-                                    Đặt đơn hàng
-                                </button>
-                                <p style="font-size: smaller;">
-                                    Khi đặt đơn hàng, bạn đồng ý với <a href="#">chính sách</a>
-                                    và <a href="#">điều khoản</a> của PTITShop.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+          <!-- Checkout Info -->
+          <div class="col-lg-8 mb-3">
+            <div th:if="${missingRequiredField}">
+              <h5 class="alert alert-warning">
+                Thông tin yêu cầu còn điền thiếu
+              </h5>
             </div>
+            <div id="accordion">
+              <div class="card">
+                <div class="card-header bg-white" id="headingOne">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link checkout-header"
+                      data-toggle="collapse"
+                      data-target="#collapseOne"
+                      aria-expanded="true"
+                      aria-controls="collapseOne"
+                    >
+                      Sản phẩm
+                      <i data-feather="chevron-down" class="mb-1"></i>
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseOne"
+                  class="collapse show"
+                  aria-labelledby="headingOne"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body border-bottom">
+                    <div
+                      class="row align-items-center border-bottom pb-2 pt-2"
+                      th:each="cartItem : ${cartItemList}"
+                    >
+                      <div class="col-12 col-md-6 mb-2">
+                        <div class="row align-items-center">
+                          <div class="col-4">
+                            <a
+                              th:href="@{/article-detail?id=}+${cartItem.article.id}"
+                              ><img
+                                class="img-fluid"
+                                th:src="'/image/article/pictures/'+${cartItem.article.picture}+'.jpg'"
+                                alt="${cartItem.article.title}"
+                            /></a>
+                          </div>
+                          <div class="col-8">
+                            <a
+                              th:href="@{/article-detail?id=}+${cartItem.article.id}"
+                              class="h6 bold d-inline-block"
+                              th:text="${cartItem.article.title}"
+                            ></a>
+                            <div>
+                              <i
+                                data-feather="check-circle"
+                                class="text-success"
+                              ></i>
+                              Còn hàng
+                            </div>
+                            <div>
+                              <small
+                                ><b>Màu sắc</b>:
+                                <span th:text="${cartItem.color}"></span
+                              ></small>
+                            </div>
+                            <small
+                              ><b>Giá 1 sản phẩm</b>:
+                              <span
+                                th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
+                              ></span
+                            ></small>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-12 col-md-6 text-right">
+                        <span
+                          >x<span th:text="${cartItem.qty}"></span> sản phẩm:
+                        </span>
+                        <span class="font-weight-bold text-info"
+                          ><span
+                            th:id="'price'+${cartItem.id}"
+                            th:text="${#numbers.formatDecimal(cartItem.subtotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"
+                          ></span
+                        ></span>
+                      </div>
+                    </div>
+                    <div class="text-center mx-auto">
+                      <p class="counter mt-2">TỔNG</p>
+                      <h3 class="font-weight-bold">
+                        <span
+                          th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
+                        ></span>
+                      </h3>
+                    </div>
+                    <div
+                      class="d-flex flex-wrap justify-content-between align-items-center mt-3"
+                    >
+                      <a
+                        th:href="@{/shopping-cart/cart}"
+                        class="btn btn-info rounded-pill"
+                        ><i data-feather="arrow-left"></i> Sửa đơn hàng</a
+                      >
+                      <a
+                        data-toggle="collapse"
+                        data-parent="#accordion"
+                        class="btn btn-primary rounded-pill"
+                        href="#collapseTwo"
+                        >Tiếp <i data-feather="arrow-right"></i
+                      ></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header bg-white" id="headingTwo">
+                  <h5 class="mb-0">
+                    <button
+                      class="btn btn-link checkout-header"
+                      data-toggle="collapse"
+                      data-target="#collapseTwo"
+                      aria-expanded="false"
+                      aria-controls="collapseTwo"
+                    >
+                      Giao hàng <i data-feather="chevron-down" class="mb-1"></i>
+                    </button>
+                  </h5>
+                </div>
+                <div
+                  id="collapseTwo"
+                  class="collapse"
+                  aria-labelledby="headingTwo"
+                  data-parent="#accordion"
+                >
+                  <div class="card-body border-bottom">
+                    <div class="form-row">
+                      <div class="form-group col-12">
+                        <label for="receiver">Tên người nhận</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="receiver"
+                          name="receiver"
+                          required="required"
+                        />
+                      </div>
+                      <div class="form-group col-12">
+                        <label for="streetAddress">Địa chỉ</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="streetAddress"
+                          name="streetAddress"
+                          required="required"
+                        />
+                      </div>
+                      <div class="form-group col-12">
+                        <label for="city">Thành phố</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="city"
+                          th:name="city"
+                          required="required"
+                        />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-4">
+            <div class="card">
+              <div class="card-header bg-white checkout-header">
+                TỔNG ĐƠN HÀNG
+              </div>
+              <div class="card-body">
+                <div class="d-flex justify-content-between">
+                  <span>Tổng sản phẩm</span>
+                  <span
+                    ><span
+                      th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
+                    >
+                    </span
+                  ></span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span>Phí vận chuyển</span>
+                  <span>0 VND</span>
+                </div>
+                <hr />
+                <div class="d-flex justify-content-between">
+                  <span>Tổng</span>
+                  <span class="font-weight-bold"
+                    ><span
+                      th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + 'VND'}"
+                    >
+                    </span
+                  ></span>
+                </div>
+              </div>
+              <div class="card-footer bg-white border-top-0">
+                <button
+                  type="submit"
+                  class="btn btn-primary rounded-pill btn-lg btn-block mt-2 mb-3"
+                >
+                  Đặt đơn hàng
+                </button>
+                <p style="font-size: smaller">
+                  Khi đặt đơn hàng, bạn đồng ý với
+                  <a href="#">chính sách</a> và <a href="#">điều khoản</a> của
+                  PTITShop.
+                </p>
+              </div>
+            </div>
+          </div>
         </div>
-    </form>
+      </form>
+    </div>
+    <!--  end container -->
 
-</div> <!--  end container -->
-
-<div th:replace="common/header :: footer"></div>
-<div th:replace="common/header :: body-scripts"></div>
-
-
-</body>
+    <div th:replace="common/header :: footer"></div>
+    <div th:replace="common/header :: body-scripts"></div>
+  </body>
 </html>
