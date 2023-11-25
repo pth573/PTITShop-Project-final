@@ -2,20 +2,22 @@
 <html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
 <head th:replace="common/header :: common-header">
 
-<body class="d-flex flex-column" >
-  <div th:replace="common/header :: navbar"> </div>
+<body class="d-flex flex-column">
+<div th:replace="common/header :: navbar"></div>
 
-  
-  <div class="jumbotron jumbotron-fluid mt-0" th:style="'background-image: url(/image/background/8.jpg);'">
-  	<div class="container">
-      <div class="row text-left py-5">   
-         <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
-            <h1 class="font-weight-bold" style="font-size: 120px; color: #fff; text-shadow: 2px 2px #000;">PTIT Shop</h1>
-            <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm" style="font-size: 25px">Mua ngay</a>
-          </div> 
-          </div>
-      </div>
-  </div>
+
+<div class="jumbotron jumbotron-fluid mt-0" th:style="'background-image: url(/image/background/8.jpg);'">
+    <div class="container">
+        <div class="row text-left py-5">
+            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
+                <h1 class="font-weight-bold" style="font-size: 120px; color: #fff; text-shadow: 2px 2px #000;">PTIT
+                    Shop</h1>
+                <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm"
+                   style="font-size: 25px">Mua ngay</a>
+            </div>
+        </div>
+    </div>
+</div>
 </div>
 <!-- End Section Two -->
 
@@ -54,16 +56,18 @@
 <!-- End View in Action -->
 
 <!--Danh mục sản phẩm-->
-<section class="section py-5 ">
+<section class="section py-5 categoryU">
     <div class="container text-center">
-        <h4 class="font-weight-bold ">Danh mục sản phẩm</h4>
+        <h4 class="font-weight-bold font-new">Danh mục sản phẩm</h4>
         <div class="featured-items mt-4">
             <div class="card card-product card-featured" th:each="article : ${articles}">
                 <div class="card-body">
                     <a th:href="@{/article-detail?id=}+${article.id}">
-                      <img class="card-img-top" th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"alt="Card image cap">
+                        <img class="card-img-top"
+                             th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"
+                             alt="Card image cap">
                     </a>
-                    <a th:href="@{/article-detail?id=}+${article.id}" class="card-title" th:text="${article.title}"></a>
+                    <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new" th:text="${article.title}"></a>
                     <div class="price"><span
                             th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
                     </div>
@@ -73,6 +77,7 @@
     </div>
 </section>
 <!--End Danh mục sản phẩm-->
+
 
 <!-- Section Banner  -->
 <div class="section-two">
@@ -108,7 +113,8 @@
                     <h3 class="inner-title">
                         Quà tặng
                     </h3>
-                    <p class="inner-desc">Quà tặng miễn phí cho nhiều dịp lễ, voucher giảm giá cho các thành viên VIP</p>
+                    <p class="inner-desc">Quà tặng miễn phí cho nhiều dịp lễ, voucher giảm giá cho các thành viên
+                        VIP</p>
                 </div>
             </div>
         </div>
@@ -117,7 +123,7 @@
 <!-- EndSection Banner  -->
 
 <!--Sản phẩm nổi bật-->
-<section class="section pt-5">
+<section class="section pt-5 hotProduct">
     <div class="container text-center">
         <h4 class="font-weight-bold">Sản phẩm phổ biến</h4>
         <div id="randomImagesContainer" style="display: flex; justify-content: center;"></div>
@@ -168,7 +174,8 @@
                         Feedback thân yêu
                     </h2>
                     <p class="inner-desc">
-                        PTIT cho mình những người bạn những tiền bối và cho mình cả những người đồng nghiệp tuyệt vời. Chúng tớ gặp nhau và thật có duyên đều là sinh viên học viên P
+                        PTIT cho mình những người bạn những tiền bối và cho mình cả những người đồng nghiệp tuyệt vời.
+                        Chúng tớ gặp nhau và thật có duyên đều là sinh viên học viên P
                     </p>
                 </div>
             </div>
@@ -179,7 +186,8 @@
                 <div class="inner-box">
                     <div class="inner-main">
                         <div class="inner-content">
-                            Tôi chọn khoác lên mình một chiếc áo khoác lửa, chiếc áo của sự hào nhoáng - chiếc áo khoác PTIT đỏ rực - để cháy hết mình trên con đường đam mê !
+                            Tôi chọn khoác lên mình một chiếc áo khoác lửa, chiếc áo của sự hào nhoáng - chiếc áo khoác
+                            PTIT đỏ rực - để cháy hết mình trên con đường đam mê !
                         </div>
                     </div>
                     <div class="inner-info">
@@ -215,7 +223,8 @@
                 <div class="inner-box">
                     <div class="inner-main">
                         <div class="inner-content">
-                            Trước ngực, logo PTIT sắc đỏ đầy tự hào nổi bật, đại diện cho một cộng đồng sinh viên năng động.
+                            Trước ngực, logo PTIT sắc đỏ đầy tự hào nổi bật, đại diện cho một cộng đồng sinh viên năng
+                            động.
                         </div>
                     </div>
                     <div class="inner-info">
@@ -265,35 +274,37 @@
                                 </div>
                             </div>
                         </div>
-<!--                        <div class="inner-item">-->
-<!--                            <div class="inner-icon">-->
-<!--                                <i class="fa-solid fa-location-dot"></i>-->
-<!--                            </div>-->
-<!--                            <div class="inner-content">-->
-<!--                                <div class="inner-title">-->
-<!--                                    Location:-->
-<!--                                </div>-->
-<!--                                <div class="inner-desc">-->
-<!--                                    123 đường ABC-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
-<!--                        <div class="inner-item">-->
-<!--                            <div class="inner-icon">-->
-<!--                                <i class="fa-solid fa-location-dot"></i>-->
-<!--                            </div>-->
-<!--                            <div class="inner-content">-->
-<!--                                <div class="inner-title">-->
-<!--                                    Location:-->
-<!--                                </div>-->
-<!--                                <div class="inner-desc">-->
-<!--                                    123 đường ABC-->
-<!--                                </div>-->
-<!--                            </div>-->
-<!--                        </div>-->
+                        <!--                        <div class="inner-item">-->
+                        <!--                            <div class="inner-icon">-->
+                        <!--                                <i class="fa-solid fa-location-dot"></i>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="inner-content">-->
+                        <!--                                <div class="inner-title">-->
+                        <!--                                    Location:-->
+                        <!--                                </div>-->
+                        <!--                                <div class="inner-desc">-->
+                        <!--                                    123 đường ABC-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
+                        <!--                        <div class="inner-item">-->
+                        <!--                            <div class="inner-icon">-->
+                        <!--                                <i class="fa-solid fa-location-dot"></i>-->
+                        <!--                            </div>-->
+                        <!--                            <div class="inner-content">-->
+                        <!--                                <div class="inner-title">-->
+                        <!--                                    Location:-->
+                        <!--                                </div>-->
+                        <!--                                <div class="inner-desc">-->
+                        <!--                                    123 đường ABC-->
+                        <!--                                </div>-->
+                        <!--                            </div>-->
+                        <!--                        </div>-->
                     </div>
                     <div class="inner-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.292513285951!2d105.7848629749993!3d20.980908489420973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1700904293622!5m2!1svi!2s" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.292513285951!2d105.7848629749993!3d20.980908489420973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1700904293622!5m2!1svi!2s"
+                                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+                                referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </div>
                 </div>
             </div>

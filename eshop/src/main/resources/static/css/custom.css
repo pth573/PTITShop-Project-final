@@ -165,3 +165,46 @@
 
 /* End Section Two */
 
+/*Category*/
+section.categoryU {
+    background: #F8D7DA;
+}
+
+section.hotProduct{
+    background: #F8D7DA;
+    padding: 50px;
+}
+
+.categoryU .card-body {
+    text-align: center; /* Canh giữa nội dung trong card */
+}
+
+.categoryU .card-img-top {
+    max-width: 100%; /* Đảm bảo hình ảnh không vượt quá kích thước của card */
+    height: auto; /* Đảm bảo tỷ lệ khung hình ảnh không bị thay đổi */
+}
+
+.categoryU .card-title {
+    text-decoration: none; /* Loại bỏ đường gạch chân khi hover */
+    color: #333; /* Màu chữ */
+    font-weight: bold; /* In đậm tiêu đề */
+}
+
+.categoryU .card-title:hover{
+    color:var(--color-one)!important;
+}
+
+.categoryU .price {
+    color: #f44336; /* Màu giá sản phẩm */
+    font-weight: bold; /* In đậm giá */
+    font-size: 1.2em; /* Kích thước font-size */
+}
+
+.font-new{
+    color:var(--color-text-1)!important;
+    font-weight: 600;
+}
+
+/*End Category*/
+
+

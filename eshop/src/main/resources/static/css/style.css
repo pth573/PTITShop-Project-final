@@ -380,16 +380,36 @@ a {
   padding: 1rem;
 }
 
+/* Nút next */
 .slick-next:before {
-  content: ">";
-  color: #787d85;
+  content: "\f105";
+  font-family: "Font Awesome 5 Free";
+  color: #FFFFFF;
   font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  background-color: gray;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
 }
 
+/* Nút prev */
 .slick-prev:before {
-  content: "<";
-  color: #787d85;
+  content: "\f104"; /* Thay thế bằng mã Unicode của biểu tượng < trong font-awesome */
+  font-family: "Font Awesome 5 Free";
+  color: #FFFFFF;
   font-size: 30px;
+  font-weight: bold;
+  border-radius: 50%;
+  width: 35px;
+  background-color: gray;
+  display: flex;
+  height: 35px;
+  justify-content: center;
+  align-items: center;
 }
 
 .checkout-header {
