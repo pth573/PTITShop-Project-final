@@ -13,7 +13,7 @@
         id="table-article"
         class="table table-striped table-bordered table-hover"
       >
-        <thead class="thead-dark">
+        <thead class="table-light">
           <tr>
             <th>Tên sản phẩm</th>
             <th>Phân loại</th>
@@ -40,7 +40,7 @@
                 <span
                   th:each="item : ${article.types}"
                   th:text="${item.getName()} "
-                  class="badge badge-primary mr-1"
+                  class="badge badge-info mr-1"
                 ></span>
               </div>
             </td>
@@ -49,7 +49,7 @@
                 <span
                   th:each="item : ${article.colors}"
                   th:text="${item.getValue()} "
-                  class="badge badge-primary mr-1"
+                  class="badge badge-info mr-1"
                 ></span>
               </div>
             </td>
@@ -60,7 +60,7 @@
             <td class="text-center">
               <a
                 th:href="@{/article/edit?id=}+${article.id}"
-                class="btn btn-success rounded-pill"
+                class="btn btn-primary rounded-pill"
                 >SỬA</a
               >
               &#160;

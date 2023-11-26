@@ -56,7 +56,7 @@
                           <div class="col-8">
                             <a
                               th:href="@{/article-detail?id=}+${cartItem.article.id}"
-                              class="h6 bold d-inline-block"
+                              class="h6 font-weight-bold d-inline-block"
                               th:text="${cartItem.article.title}"
                             ></a>
                             <div>
@@ -85,7 +85,7 @@
                         <span
                           >x<span th:text="${cartItem.qty}"></span> sản phẩm:
                         </span>
-                        <span class="font-weight-bold text-info"
+                        <span class="font-weight-bold"
                           ><span
                             th:id="'price'+${cartItem.id}"
                             th:text="${#numbers.formatDecimal(cartItem.subtotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"
@@ -199,13 +199,24 @@
                 </div>
                 <hr />
                 <div class="d-flex justify-content-between">
-                  <span>Tổng</span>
-                  <span class="font-weight-bold"
+                  <span class="font-weight-bold">TỔNG: </span>
+                  <span class="font-weight-bold text-success"
                     ><span
                       th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + 'VND'}"
                     >
                     </span
                   ></span>
+                </div>
+                <hr />
+                <div
+                  class="d-flex flex-column justify-content-between align-items-center"
+                >
+                  <span class="font-weight-bold">Mã QR thanh toán</span>
+                  <img
+                    class="w-50 my-1 mx-auto"
+                    src="/image/QR_code.png"
+                    alt="QR code thanh toán"
+                  />
                 </div>
               </div>
               <div class="card-footer bg-white border-top-0">

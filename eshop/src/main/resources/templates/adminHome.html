@@ -8,8 +8,10 @@
 
   <body class="d-flex flex-column">
     <div th:fragment="navbarAdmin">
-      <nav class="navbar navbar-expand-md navbar-dark bg-dark mb-4 fixed-top">
-        <!-- <a class="navbar-type" th:href="@{/admin}">ADMIN PORTAL</a> -->
+      <nav
+        class="navbar navbar-expand-md navbar-dark mb-4 fixed-top"
+        style="background: var(--color-one) !important"
+      >
         <button
           class="navbar-toggler"
           type="button"
@@ -24,9 +26,17 @@
         <div class="collapse navbar-collapse" id="navbarCollapse">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-              <a class="text-white mr-3" th:href="@{/article/add}">Thêm</a>
-              <a class="text-white" th:href="@{/article/article-list}"
-                >Xem danh sách
+              <a
+                class="mr-3 font-weight-bold"
+                th:href="@{/article/add}"
+                style="color: var(--bg-1)"
+                >Thêm sản phẩm
+              </a>
+              <a
+                class="font-weight-bold"
+                th:href="@{/article/article-list}"
+                style="color: var(--bg-1)"
+                >Xem sản phẩm
               </a>
             </li>
           </ul>
@@ -36,6 +46,7 @@
                 class="nav-link"
                 sec:authorize="isAuthenticated()"
                 th:href="@{/}"
+                style="color: var(--bg-1)"
               >
                 Quay về Shop
               </a>
@@ -45,6 +56,7 @@
                 class="nav-link"
                 sec:authorize="isAuthenticated()"
                 th:href="@{/logout}"
+                style="color: var(--bg-1)"
               >
                 Đăng xuất
               </a>
