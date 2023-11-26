@@ -4,10 +4,10 @@
 
   <body class="d-flex flex-column">
     <div th:replace="common/header :: navbar"></div>
-    <div class="container page-content">
+    <div class="container page-content mt-5">
       <div class="row">
         <div class="col-12 col-sm-6 col-lg-6 mb-2 text-center text-left-lg">
-          <h5 class="font-weight-bold">Chi tiết đơn hàng</h5>
+          <h5 class="font-weight-bold text-primary">Chi tiết đơn hàng</h5>
           <div
             class="list-group list-group-flush list-group-no-border list-group-sm"
           >
@@ -25,13 +25,16 @@
             </div>
             <div>
               <strong>Trạng thái đơn hàng: </strong
-              ><span th:text="${order.orderStatus}"></span>
+              ><span
+                th:text="${order.orderStatus}"
+                class="text-success font-weight-bold"
+              ></span>
             </div>
           </div>
           <hr class="d-block d-sm-none" />
         </div>
         <div class="col-12 col-sm-6 col-lg-6 mb-2 text-center">
-          <h5 class="font-weight-bold">Giao hàng</h5>
+          <h5 class="font-weight-bold text-primary">Giao hàng</h5>
           <div
             class="list-group list-group-flush list-group-no-border list-group-sm"
           >
