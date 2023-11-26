@@ -21,7 +21,7 @@
             <th>Màu sắc</th>
             <th>Giá</th>
             <th>Kho</th>
-            <th>Thao tác</th>
+            <th class="text-center">Thao tác</th>
           </tr>
         </thead>
         <tbody>
@@ -57,15 +57,16 @@
               th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
             ></td>
             <td th:text="${article.stock}"></td>
-            <td>
+            <td class="text-center">
               <a
                 th:href="@{/article/edit?id=}+${article.id}"
-                class="text-primary"
+                class="btn btn-success rounded-pill"
                 >SỬA</a
               >
+              &#160;
               <a
                 th:href="@{/article/delete?id=}+${article.id}"
-                class="text-danger"
+                class="btn btn-danger rounded-pill"
                 >XOÁ
               </a>
             </td>

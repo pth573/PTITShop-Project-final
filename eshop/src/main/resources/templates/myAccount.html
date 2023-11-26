@@ -26,6 +26,7 @@
                           placeholder="Username"
                           name="username"
                           th:classappend="${param.error} ? is-invalid"
+                          autofocus
                         />
                       </div>
                     </div>
@@ -84,7 +85,7 @@
                           class="form-control inner-input"
                           th:classappend="${emailExists} ? is-invalid"
                           name="email"
-                          placeholder="Email address"
+                          placeholder="Email của bạn"
                           th:value="${email}"
                         />
                         <div class="invalid-feedback">
