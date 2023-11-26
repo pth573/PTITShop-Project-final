@@ -12,7 +12,7 @@
           <div class="col-lg-8 mb-3">
             <div th:if="${missingRequiredField}">
               <h5 class="alert alert-warning">
-                Thông tin yêu cầu còn điền thiếu
+                Xin vui lòng nhập đủ thông tin cần thiết
               </h5>
             </div>
             <div id="accordion">
@@ -73,7 +73,7 @@
                               ></small>
                             </div>
                             <small
-                              ><b>Giá 1 sản phẩm</b>:
+                              ><b>Giá tiền</b>:
                               <span
                                 th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
                               ></span
@@ -83,7 +83,7 @@
                       </div>
                       <div class="col-12 col-md-6 text-right">
                         <span
-                          >x<span th:text="${cartItem.qty}"></span> sản phẩm:
+                          >x<span th:text="${cartItem.qty}"></span> Sản phẩm:
                         </span>
                         <span class="font-weight-bold"
                           ><span
@@ -94,7 +94,7 @@
                       </div>
                     </div>
                     <div class="text-center mx-auto">
-                      <p class="counter mt-2">TỔNG</p>
+                      <p class="counter mt-2">TỔNG SỐ TIỀN</p>
                       <h3 class="font-weight-bold">
                         <span
                           th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
@@ -130,7 +130,7 @@
                       aria-expanded="false"
                       aria-controls="collapseTwo"
                     >
-                      Giao hàng <i data-feather="chevron-down" class="mb-1"></i>
+                      Địa chỉ nhận hàng<i data-feather="chevron-down" class="mb-1"></i>
                     </button>
                   </h5>
                 </div>
@@ -181,11 +181,11 @@
           <div class="col-lg-4">
             <div class="card">
               <div class="card-header bg-white checkout-header">
-                TỔNG ĐƠN HÀNG
+                THANH TOÁN
               </div>
               <div class="card-body">
                 <div class="d-flex justify-content-between">
-                  <span>Tổng sản phẩm</span>
+                  <span>Tổng số tiền</span>
                   <span
                     ><span
                       th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
@@ -199,10 +199,10 @@
                 </div>
                 <hr />
                 <div class="d-flex justify-content-between">
-                  <span class="font-weight-bold">TỔNG: </span>
+                  <span class="font-weight-bold">TỔNG THANH TOÁN: </span>
                   <span class="font-weight-bold text-success"
                     ><span
-                      th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + 'VND'}"
+                      th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
                     >
                     </span
                   ></span>
@@ -224,12 +224,12 @@
                   type="submit"
                   class="btn btn-primary rounded-pill btn-lg btn-block mt-2 mb-3"
                 >
-                  Đặt đơn hàng
+                  Đặt hàng
                 </button>
                 <p style="font-size: smaller">
-                  Khi đặt đơn hàng, bạn đồng ý với
+                  Khi bấm đặt đơn hàng, bạn đồng ý với
                   <a href="#">chính sách</a> và <a href="#">điều khoản</a> của
-                  PTITShop.
+                  PTIT Shop.
                 </p>
               </div>
             </div>

@@ -42,7 +42,7 @@
                       ></span>
                     </div>
                     <span
-                      ><b>Giá 1 sản phẩm: </b
+                      ><b>₫</b
                       ><span
                         th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
                       ></span
@@ -102,7 +102,7 @@
               <div th:if="${#lists.isEmpty(cartItemList)}">
                 Giỏ hàng còn trống!
               </div>
-              <p class="counter">TỔNG</p>
+              <p class="counter">TỔNG SỐ TIỀN</p>
               <h3 class="font-weight-bold">
                 <span th:if="${shoppingCart.getGrandTotal() == 0}">
                   0 VND
