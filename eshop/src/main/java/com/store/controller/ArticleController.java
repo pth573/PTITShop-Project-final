@@ -89,7 +89,7 @@ public class ArticleController {
 				Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
 			}
 
-			String imageLink = "/image/" + fileName; // Đường dẫn tới file ảnh
+			String imageLink = "/image/QD09/" + fileName; // Đường dẫn tới file ảnh
 
 			// Tạo đối tượng Article và cập nhật đường dẫn ảnh
 			Article newArticle = new ArticleBuilder()
