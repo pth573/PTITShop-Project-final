@@ -86,14 +86,7 @@
               </div>
               <p class="d-none d-lg-block">
                 <span style="font-weight: 700;" class="title-2">Mô tả:</span>
-                <!-- <span th:text="${article.description}"></span> -->
-                <span
-                  >Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                  Error incidunt delectus rerum aliquid dolores, commodi iure
-                  illum recusandae! Tempore voluptatibus esse assumenda error
-                  sit fugit expedita molestiae debitis dignissimos
-                  adipisci?</span
-                >
+                 <span th:text="${article.description}"></span>
               </p>
               <form th:action="@{/shopping-cart/add-item}" method="post">
                 <input hidden="hidden" th:field="*{article.id}" />

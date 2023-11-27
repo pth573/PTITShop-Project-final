@@ -53,20 +53,6 @@ public class ArticleController {
 		return "addArticle";
 	}
 
-	//    @RequestMapping(value = "/add", method = RequestMethod.POST)
-//    public String addArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
-//        Article newArticle = new ArticleBuilder()
-//                .withTitle(article.getTitle())
-//                .stockAvailable(article.getStock())
-//                .withPrice(article.getPrice())
-//                .imageLink(article.getPicture())
-//                .color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
-//                .ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
-//                .ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
-//                .build();
-//        articleService.saveArticle(newArticle);
-//        return "redirect:article-list";
-//    }
 	@RequestMapping(value = "/add", method = RequestMethod.POST)
 	@PostMapping("/add")
 	public String addArticlePost(@RequestParam("title") String title,
@@ -144,24 +130,6 @@ public class ArticleController {
 		model.addAttribute("allCategories", articleService.getAllCategories());
 		return "editArticle";
 	}
-
-
-//	@RequestMapping(value = "/edit", method = RequestMethod.POST)
-//	@PostMapping("/edit")
-//	public String editArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
-//		Article newArticle = new ArticleBuilder()
-//				.withTitle(article.getTitle())
-//				.stockAvailable(article.getStock())
-//				.withPrice(article.getPrice())
-//				.imageLink(article.getPicture())
-//				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
-//				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
-//				.ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
-//				.build();
-//		newArticle.setId(article.getId());
-//		articleService.saveArticle(newArticle);
-//		return "redirect:article-list";
-//	}
 
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
 	@PostMapping("/edit")

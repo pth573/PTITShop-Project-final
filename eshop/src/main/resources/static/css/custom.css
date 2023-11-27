@@ -292,6 +292,7 @@ input.form-control:focus{
 .button-no-size:hover{
     color: #FFFFFF;
     background-color: var(--color-one);
+    border-color: var(--color-one);
 }
 
 .button-no-size-1{

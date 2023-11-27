@@ -35,11 +35,27 @@
               />
             </div>
           </div>
+
+          <div class="form-group row">
+            <label for="desc" class="col-2 col-form-label text-right title-2 title-form-custom"
+            >Mô tả sản phẩm</label
+            >
+            <div class="col-6">
+              <input
+                      th:value="${article.description}"
+                      type="text"
+                      class="form-control inner-input"
+                      id="desc"
+                      name="description"
+              />
+            </div>
+          </div>
+
           <div class="form-group row">
             <label for="categories" class="col-2 col-form-label text-right title-2 title-form-custom"
               >Danh mục</label
             >
-            <div class="col-6">
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -63,7 +79,7 @@
             <label for="sizes" class="col-2 col-form-label text-right title-2 title-form-custom"
               >Màu sắc</label
             >
-            <div class="col-6">
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -87,7 +103,7 @@
             <label for="types" class="col-2 col-form-label text-right title-2 title-form-custom"
               >Phân loại</label
             >
-            <div class="col-6">
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -123,7 +139,7 @@
                 step="1"
                 class="form-control inner-input"
                 id="price"
-                placeholder="List Price"
+                placeholder="Nhập giá tiền"
               />
             </div>
           </div>
