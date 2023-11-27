@@ -35,8 +35,7 @@
               <a
                 th:href="@{/my-orders}"
                 class="list-group-item list-group-item-action"
-                ><i data-feather="shopping-bag" class="mr-3"></i> Các đơn
-                hàng</a
+                ><i data-feather="shopping-bag" class="mr-3"></i>Lịch sử mua hàng</a
               >
               <a
                 th:href="@{/my-address}"
@@ -73,7 +72,7 @@
             class="alert alert-danger alert-dismissible fade show"
             role="alert"
           >
-            <strong>Mật khẩu sai</strong>
+            <strong>Sai mật khẩu</strong>
             <button
               type="button"
               class="close"
@@ -116,7 +115,7 @@
                     />
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="userName">Username</label>
+                    <label for="userName">Tên đăng nhập</label>
                     <input
                       required="required"
                       type="text"
@@ -127,7 +126,7 @@
                       th:value="${user.username}"
                     />
                     <div class="invalid-feedback">
-                      Username đã được sử dụng. Chọn 1 cái khác.
+                      Tên đăng nhập đã được sử dụng. Vui lòng chọn tên khác.
                     </div>
                   </div>
                   <div class="form-group col-sm-6">

@@ -38,7 +38,7 @@
 <!-- End Section Three -->
 
 <!-- View in Action -->
-<div class="view-action" >
+<div class="view-action">
     <div class="container">
         <div class="box-head box-head-center">
             <h2 class="inner-title">
@@ -67,7 +67,8 @@
                              th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"
                              alt="Card image cap">
                     </a>
-                    <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new" th:text="${article.title}"></a>
+                    <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new"
+                       th:text="${article.title}"></a>
                     <div class="price"><span
                             th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
                     </div>
@@ -80,7 +81,7 @@
 
 
 <!-- Section Banner  -->
-<div class="section-two" >
+<div class="section-two">
     <div class="container">
         <div class="row">
             <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
@@ -171,11 +172,12 @@
             <div class="col-12">
                 <div class="box-head">
                     <h2 class="inner-title">
-                        Feedback thân yêu
+                        Feedback từ những sinh viên thân yêu
                     </h2>
                     <p class="inner-desc">
-                        PTIT cho mình những người bạn những tiền bối và cho mình cả những người đồng nghiệp tuyệt vời.
-                        Chúng tớ gặp nhau và thật có duyên đều là sinh viên học viên P
+                        PTIT cho mình một môi trường năng động, những giảng viên tận tình và cho mình cả những người bạn
+                        tuyệt vời.
+                        Chúng tớ sẽ cháy hết thanh xuân cùng với PTIT!
                     </p>
                 </div>
             </div>
@@ -186,8 +188,8 @@
                 <div class="inner-box">
                     <div class="inner-main">
                         <div class="inner-content">
-                            Tôi chọn khoác lên mình một chiếc áo khoác lửa, chiếc áo của sự hào nhoáng - chiếc áo khoác
-                            PTIT đỏ rực - để cháy hết mình trên con đường đam mê !
+                            Với logo đỏ thắm trước ngực cùng màu áo đỏ trắng thương hiệu, tớ tự hào khi là sinh viên của
+                            PTIT!
                         </div>
                     </div>
                     <div class="inner-info">
@@ -196,7 +198,7 @@
                             Nguyễn Thị Lan
                         </h3>
                         <p class="inner-position">
-                            Lập trình viên
+                            Sinh viên PTIT - cơ sở Hà Nội
                         </p>
                     </div>
                 </div>
@@ -205,7 +207,8 @@
                 <div class="inner-box">
                     <div class="inner-main">
                         <div class="inner-content">
-                            "ÁO KHOÁC LIỀN TAY, ĐÁ BAY HỌC BỔNG "
+                            Những cuốn giáo trình, tài liệu ở PTIT Shop đã giúp mình thực hiện ước mơ học bổng. Còn bạn
+                            thì sao?
                         </div>
                     </div>
                     <div class="inner-info">
@@ -214,7 +217,7 @@
                             Nguyễn Hữu Quang Hòa
                         </h3>
                         <p class="inner-position">
-                            Lập trình viên
+                            Sinh viên PTIT - cơ sở Hà Nội
                         </p>
                     </div>
                 </div>
@@ -223,8 +226,9 @@
                 <div class="inner-box">
                     <div class="inner-main">
                         <div class="inner-content">
-                            Trước ngực, logo PTIT sắc đỏ đầy tự hào nổi bật, đại diện cho một cộng đồng sinh viên năng
-                            động.
+                            Tự hào khi khoác lên mình long bào của PTIT. Mình cực kì ủng hộ PTIT Shop vì đã mang đến cho
+                            sinh
+                            viên những chiếc áo chất lượng như này!
                         </div>
                     </div>
                     <div class="inner-info">
@@ -233,7 +237,7 @@
                             Nguyễn Tiến Thắng
                         </h3>
                         <p class="inner-position">
-                            Lập trình viên
+                            Sinh viên PTIT - cơ sở Hồ Chí Minh
                         </p>
                     </div>
                 </div>
@@ -244,7 +248,7 @@
 <!--End Feedback-->
 
 <!--Liên lạc-->
-<div class="contact" >
+<div class="contact">
     <div class="container">
         <div class="row">
             <div class="col-12">
@@ -252,7 +256,7 @@
                     <h2 class="inner-title">
                         Liên lạc
                     </h2>
-                    <p class="inner-desc">Hãy liên lạc với chúng tôi bất cứ khi nào bạn cần !!!</p>
+                    <p class="inner-desc">Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần !!!</p>
                 </div>
             </div>
         </div>
@@ -267,10 +271,10 @@
                             </div>
                             <div class="inner-content">
                                 <div class="inner-title">
-                                    Location:
+                                    Địa điểm:
                                 </div>
                                 <div class="inner-desc">
-                                    Số 10 Trần Phú, Mỗ Lao, Hà Đông
+                                    Km10 Nguyễn Trãi, Mỗ Lao, Hà Đông, Hà Nội
                                 </div>
                             </div>
                         </div>

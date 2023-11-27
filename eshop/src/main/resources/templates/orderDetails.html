@@ -18,7 +18,7 @@
               ></span>
             </div>
             <div>
-              <strong>Ngày vận chuyển: </strong
+              <strong>Dự kiến giao hàng: </strong
               ><span
                 th:text="${#dates.format(order.shippingDate, 'dd-MM-yyyy')}"
               ></span>
@@ -34,12 +34,12 @@
           <hr class="d-block d-sm-none" />
         </div>
         <div class="col-12 col-sm-6 col-lg-6 mb-2 text-center">
-          <h5 class="font-weight-bold text-primary">Giao hàng</h5>
+          <h5 class="font-weight-bold text-primary">Địa chỉ nhận hàng</h5>
           <div
             class="list-group list-group-flush list-group-no-border list-group-sm"
           >
             <div>
-              <strong>Người nhận: </strong
+              <strong>Tên người nhận: </strong
               ><span th:text="${order.shipping.receiver}"></span>
             </div>
             <div>
@@ -55,7 +55,7 @@
         </div>
       </div>
       <hr />
-      <h5 class="font-weight-bold text-center">Các sản phẩm đã mua</h5>
+      <h5 class="font-weight-bold text-center">Sản phẩm</h5>
       <div class="row">
         <div class="card-body">
           <div
@@ -85,7 +85,7 @@
                     ></small>
                   </div>
                   <small
-                    ><b>Giá 1 sản phẩm</b>:
+                    ><b>₫</b>:
                     <span
                       th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
                     ></span
@@ -95,7 +95,7 @@
             </div>
 
             <div class="col-12 col-md-6 text-right">
-              <span>x<span th:text="${cartItem.qty}"></span> sản phẩm: </span>
+              <span>x<span th:text="${cartItem.qty}"></span> Tên sản phẩm: </span>
               <span class="font-weight-bold text-info"
                 ><span
                   th:id="'price'+${cartItem.id}"
@@ -106,7 +106,7 @@
           </div>
           <div class="d-flex justify-content-center align-items-center mt-3">
             <div class="text-center">
-              <small class="counter">TỔNG</small>
+              <small class="counter">THANH TOÁN</small>
               <h3 class="font-weight-bold">
                 <span
                   th:text="${#numbers.formatDecimal(order.orderTotal, 0, 'COMMA', 3, 'POINT') + ' VND'}"

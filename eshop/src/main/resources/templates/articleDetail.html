@@ -40,9 +40,10 @@
         role="alert"
       >
         <strong>
-          Không thể thêm vào giỏ hàng, chỉ còn
-          <span th:text="${article.stock}"></span>
-          sản phẩm.
+<!--          Không thể thêm vào giỏ hàng, chỉ còn-->
+<!--          <span th:text="${article.stock}"></span>-->
+<!--          sản phẩm.-->
+          Xin lỗi, số lượng sản phẩm còn lại không đủ để đáp ứng nhu cầu của bạn.
         </strong>
         <button
           type="button"
@@ -71,14 +72,14 @@
               ></h2>
               <div class="d-flex flex-column justify-content-center">
                 <h3 class="mr-3">
-                  <span>Giá: </span>
+                  <span>Giá tiền</span>
                   <span
                     th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
                     class="price font-weight-bold"
                   ></span>
                 </h3>
                 <h6 style="font-style: italic">
-                  (Còn <span th:text="${article.stock}"></span> sản phẩm)
+                  (Còn lại <span th:text="${article.stock}"></span> sản phẩm)
                 </h6>
               </div>
               <p class="d-none d-lg-block">
@@ -108,7 +109,7 @@
                 </div>
                 <div class="form-row">
                   <div class="form-group col-lg-4">
-                    <label class="font-weight-bold" for="quantity"
+                    <label class="font-weight-bold" for="qty"
                       >Số lượng</label
                     >
                     <input
