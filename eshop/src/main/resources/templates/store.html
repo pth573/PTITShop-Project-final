@@ -16,7 +16,7 @@
           <div class="accordion accordion-caret accordion-sidebar d-none d-md-block">
             <div class="card">
               <div class="card-header">
-                <a href="#filter-categories" data-toggle="collapse" aria-expanded="true" aria-controls="filter-categories" role="button" class="h6">
+                <a href="#filter-categories" data-toggle="collapse" aria-expanded="true" aria-controls="filter-categories" role="button" class="h6 title-2">
                   DANH MỤC
                 </a>
               </div>
@@ -32,7 +32,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <a href="#filter-price" data-toggle="collapse" aria-expanded="true" aria-controls="filter-price" role="button" class="h6">
+                <a href="#filter-price" data-toggle="collapse" aria-expanded="true" aria-controls="filter-price" role="button" class="h6 title-2">
                   KHOẢNG GIÁ
                 </a>
               </div>
@@ -49,7 +49,7 @@
             </div>
             <div class="card">
               <div class="card-header">
-                <a href="#filter-size" data-toggle="collapse" aria-expanded="true" aria-controls="filter-size" role="button" class="h6">
+                <a href="#filter-size" data-toggle="collapse" aria-expanded="true" aria-controls="filter-size" role="button" class="h6 title-2">
                   MÀU SẮC
                 </a>
               </div>
@@ -65,7 +65,7 @@
             </div>            
             <div class="card">
               <div class="card-header">
-                <a href="#filter-types" data-toggle="collapse" aria-expanded="true" aria-controls="filter-types" role="button" class="h6">
+                <a href="#filter-types" data-toggle="collapse" aria-expanded="true" aria-controls="filter-types" role="button" class="h6 title-2">
                   PHÂN LOẠI
                 </a>
               </div>
@@ -81,7 +81,7 @@
             </div>
             <div class="card">
               <div class="card-header px-5 py-2 text-center">
-                 <button type="submit" form="filter-form" class="btn btn-primary rounded-pill btn-block btn-sm">ÁP DỤNG</button>
+                 <button style="padding: 5px 20px;" type="submit" form="filter-form" class="btn-one btn-buy">ÁP DỤNG</button>
               </div>
             </div>
           </div>   <!-- end of accordion sidebar -->                         
@@ -95,18 +95,18 @@
               <div class="col-8 col-md-7 col-lg-6">
                 <button type="button" class="btn btn-sm btn-outline-primary rounded-pill d-block d-md-none mb-2" data-toggle="modal" data-target="#filterModal">
                   <i data-feather="filter"></i>Bộ lọc</button>
-                <div class="input-group input-group-search input-group-sm mb-2">
+                <div style="border: 1px solid var(--color-one);" class="input-group input-group-search input-group-sm mb-2">
                   
                   <input type="text" class="form-control border-0 bg-light input-search" placeholder="Tìm kiếm sản phẩm..."
                          th:name="search" th:value="${filters.search}">
                   <div class="input-group-append">
-                    <button class="btn btn-light" type="submit"><i data-feather="search"></i></button>
+                    <button style="color:var(--color-one);" class="btn btn-light" type="submit"><i data-feather="search"></i></button>
                   </div>
                 </div>                                
               </div>    
               
               <div class="btn-group ml-3">
-                <button type="button" class="btn btn-light btn-sm border rounded-pill" data-toggle="dropdown" 
+                <button type="button" class="btn btn-light btn-sm border rounded-pill store-1" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">                        
                   <th:block th:switch="${filters.sort}">                    
                     <span id="dropdown-sort-text" th:case="'priceasc'">Giá: Cao - Thấp</span>
@@ -117,12 +117,12 @@
                   </th:block>      
                   <i data-feather="chevron-down"></i>
                 </button>
-                <div class="dropdown-menu dropdown-menu-right shadow-sm">
-                  <button class="dropdown-item button-sort" type="button" value="newest">Mới nhất</button>
-                  <button class="dropdown-item button-sort" type="button" value="priceasc">Giá: Thấp - Cao</button>
-                  <button class="dropdown-item button-sort" type="button" value="pricedesc">Giá: Cao - Thấp</button>
-                  <button class="dropdown-item button-sort" type="button" value="alphasc">Thứ tự: A - Z</button>
-                  <button class="dropdown-item button-sort" type="button" value="alphdesc">Thứ tự: Z - A</button>
+                <div style="border-color: var(--color-one);padding:0;" class="dropdown-menu dropdown-menu-right shadow-sm">
+                  <button style="border-bottom: solid 1px var(--color-one);" class="button-dropdown dropdown-item button-sort" type="button" value="newest">Mới nhất</button>
+                  <button class="button-dropdown dropdown-item button-sort" type="button" value="priceasc">Giá: Thấp - Cao</button>
+                  <button class="button-dropdown dropdown-item button-sort" type="button" value="pricedesc">Giá: Cao - Thấp</button>
+                  <button class="button-dropdown dropdown-item button-sort" type="button" value="alphasc">Thứ tự: A - Z</button>
+                  <button class="button-dropdown dropdown-item button-sort" type="button" value="alphdesc">Thứ tự: Z - A</button>
                 </div>
               </div> 
               <input id="input-sort" hidden="hidden" type="text" name="sort" th:value="${filters.sort}">                           

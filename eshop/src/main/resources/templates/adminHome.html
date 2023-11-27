@@ -27,13 +27,13 @@
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
               <a
-                class="mr-3 font-weight-bold"
+                class="mr-3 font-weight-bold title-admin"
                 th:href="@{/article/add}"
                 style="color: var(--bg-1)"
                 >Thêm sản phẩm
               </a>
               <a
-                class="font-weight-bold"
+                class="font-weight-bold title-admin"
                 th:href="@{/article/article-list}"
                 style="color: var(--bg-1)"
                 >Xem sản phẩm
@@ -43,7 +43,7 @@
           <ul class="navbar-nav ml-auto">
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link title-admin"
                 sec:authorize="isAuthenticated()"
                 th:href="@{/}"
                 style="color: var(--bg-1)"
@@ -53,7 +53,7 @@
             </li>
             <li class="nav-item">
               <a
-                class="nav-link"
+                class="nav-link title-admin"
                 sec:authorize="isAuthenticated()"
                 th:href="@{/logout}"
                 style="color: var(--bg-1)"

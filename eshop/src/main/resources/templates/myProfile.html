@@ -11,40 +11,40 @@
           <div class="card">
             <div class="card-body text-center">
               <img
-                src="/image/user/user.png"
+                src="/image/user/ThiLan.png"
                 width="100"
                 height="100"
                 alt="User"
                 class="rounded-circle mb-3"
               />
-              <h5
-                class="bold mb-0"
+              <h5 style="font-width: 600;"
+                class="bold mb-0 title-2"
                 th:text="${#strings.capitalize(user.username)}"
               ></h5>
               <small
-                class="text-secondary"
+                class="text-secondary title-bold"
                 th:text="'Lần cuối cập nhật vào: ' +${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"
               ></small>
             </div>
-            <div class="list-group list-group-flush">
+            <div class="list-group list-group-flush quydat">
               <a
                 th:href="@{/my-profile}"
-                class="list-group-item list-group-item-action active"
+                class="list-group-item list-group-item-action active button-no-size"
                 ><i data-feather="user" class="mr-3"></i> Thông tin</a
               >
               <a
                 th:href="@{/my-orders}"
-                class="list-group-item list-group-item-action"
+                class="list-group-item list-group-item-action button-no-size"
                 ><i data-feather="shopping-bag" class="mr-3"></i>Lịch sử mua hàng</a
               >
               <a
                 th:href="@{/my-address}"
-                class="list-group-item list-group-item-action"
+                class="list-group-item list-group-item-action button-no-size"
                 ><i data-feather="map" class="mr-3"></i> Địa chỉ</a
               >
-              <a
+              <a style="color: #FFFFFF;font-weight: 500"
                 th:href="@{/logout}"
-                class="list-group-item list-group-item-action text-danger"
+                class="list-group-item list-group-item-action text-danger button-no-size"
                 ><i data-feather="log-out" class="mr-3"></i> Đăng xuất
               </a>
             </div>
@@ -53,12 +53,14 @@
 
         <div class="col mt-3 mt-md-0">
           <div
+                  style="background-color: var(--color-one);"
             th:if="${updateSuccess}"
             class="alert alert-success alert-dismissible fade show"
             role="alert"
           >
-            <strong>Thông tin đã được cập nhật!</strong>
+            <strong style="color: #FFFFFF">Thông tin đã được cập nhật!</strong>
             <button
+                    style="color: #FFFFFF"
               type="button"
               class="close"
               data-dismiss="alert"
@@ -78,6 +80,7 @@
               class="close"
               data-dismiss="alert"
               aria-label="Close"
+              style="color:red"
             >
               <span aria-hidden="true">&times;</span>
             </button>
@@ -95,7 +98,7 @@
               >
                 <div class="form-row">
                   <div class="form-group col-sm-6">
-                    <label for="firstName">Tên</label>
+                    <label class="title-2" for="firstName">Tên</label>
                     <input
                       type="text"
                       class="form-control inner-input"
@@ -105,7 +108,7 @@
                     />
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="lastName">Họ</label>
+                    <label class="title-2" for="lastName">Họ</label>
                     <input
                       type="text"
                       class="form-control inner-input"
@@ -115,7 +118,7 @@
                     />
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="userName">Tên đăng nhập</label>
+                    <label class="title-2" for="userName">Tên đăng nhập</label>
                     <input
                       required="required"
                       type="text"
@@ -130,7 +133,7 @@
                     </div>
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="email">Email</label>
+                    <label class="title-2" for="email">Email</label>
                     <input
                       required="required"
                       type="text"
@@ -145,7 +148,7 @@
                     </div>
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="txtNewPassword">Mật khẩu mới</label>
+                    <label class="title-2" for="txtNewPassword">Mật khẩu mới</label>
                     <input
                       type="password"
                       class="form-control inner-input"
@@ -155,7 +158,7 @@
                     />
                   </div>
                   <div class="form-group col-sm-6">
-                    <label for="txtConfirmPassword">Xác nhận mật khẩu</label>
+                    <label class="title-2" for="txtConfirmPassword">Xác nhận mật khẩu</label>
                     <input
                       type="password"
                       class="form-control inner-input"
@@ -191,7 +194,7 @@
                   >
                     <div class="modal-content">
                       <div class="modal-header">
-                        <h5 class="modal-title" id="exampleModalLongTitle">
+                        <h5 class="modal-title title-2" id="exampleModalLongTitle">
                           Nhập mật khẩu hiện tại của bạn
                         </h5>
                         <button
@@ -216,10 +219,11 @@
                           type="button"
                           class="btn btn-secondary"
                           data-dismiss="modal"
+                          style="color:#FFFFFF"
                         >
                           Đóng
                         </button>
-                        <button type="submit" class="btn btn-primary">
+                        <button type="submit" class="btn btn-primary button-no-size-1">
                           Cập nhật
                         </button>
                       </div>

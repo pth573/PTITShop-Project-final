@@ -11,42 +11,42 @@
           <div class="card">
             <div class="card-body text-center">
               <img
-                src="/image/user/user.png"
-                width="100"
-                height="100"
-                alt="User"
-                class="rounded-circle mb-3"
+                      src="/image/user/ThiLan.png"
+                      width="100"
+                      height="100"
+                      alt="User"
+                      class="rounded-circle mb-3"
               />
-              <h5
-                class="bold mb-0"
-                th:text="${#strings.capitalize(user.username)}"
+              <h5 style="font-width: 600;"
+                  class="bold mb-0 title-2"
+                  th:text="${#strings.capitalize(user.username)}"
               ></h5>
               <small
-                class="text-secondary"
-                th:text="'Lần cuối cập nhật vào: '+${#dates.format(#dates.createNow(), 'MMM dd, yyyy')}"
+                      class="text-secondary title-bold"
+                      th:text="'Lần cuối cập nhật vào: ' +${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"
               ></small>
             </div>
-            <div class="list-group list-group-flush">
+            <div class="list-group list-group-flush quydat">
               <a
-                th:href="@{/my-profile}"
-                class="list-group-item list-group-item-action"
-                ><i data-feather="user" class="mr-3"></i> Thông tin
+                      th:href="@{/my-profile}"
+                      class="list-group-item list-group-item-action button-no-size"
+              ><i data-feather="user" class="mr-3"></i> Thông tin</a
+              >
+              <a
+                      th:href="@{/my-orders}"
+                      class="list-group-item list-group-item-action button-no-size"
+              ><i data-feather="shopping-bag" class="mr-3"></i>Lịch sử mua hàng</a
+              >
+              <a
+                      th:href="@{/my-address}"
+                      class="list-group-item list-group-item-action active button-no-size"
+              ><i data-feather="map" class="mr-3"></i> Địa chỉ</a
+              >
+              <a style="color: #FFFFFF;font-weight: 500"
+                 th:href="@{/logout}"
+                 class="list-group-item list-group-item-action text-danger button-no-size"
+              ><i data-feather="log-out" class="mr-3"></i> Đăng xuất
               </a>
-              <a
-                th:href="@{/my-orders}"
-                class="list-group-item list-group-item-action"
-                ><i data-feather="shopping-bag" class="mr-3"></i> Lịch sử mua hàng</a
-              >
-              <a
-                th:href="@{/my-address}"
-                class="list-group-item list-group-item-action active"
-                ><i data-feather="map" class="mr-3"></i> Địa chỉ</a
-              >
-              <a
-                th:href="@{/logout}"
-                class="list-group-item list-group-item-action text-danger"
-                ><i data-feather="log-out" class="mr-3"></i> Đăng xuất</a
-              >
             </div>
           </div>
         </div>
@@ -59,7 +59,7 @@
               <form th:action="@{/update-user-address}" method="post">
                 <div class="form-row">
                   <div class="form-group col-12">
-                    <label for="billingAddress">Địa chỉ</label>
+                    <label class="title-2" for="billingAddress">Địa chỉ</label>
                     <input
                       type="text"
                       id="billingAddress"
@@ -70,7 +70,7 @@
                     />
                   </div>
                   <div class="form-group col-12">
-                    <label for="billingCity">Thành phố</label>
+                    <label class="title-2" for="billingCity">Thành phố</label>
                     <input
                       type="text"
                       id="billingCity"

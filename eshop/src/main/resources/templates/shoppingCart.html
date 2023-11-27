@@ -21,12 +21,13 @@
                     <a th:href="@{/article-detail?id=}+${cartItem.article.id}"
                       ><img
                         class="img-fluid"
-                        th:src="'/image/article/pictures/'+${cartItem.article.picture}+'.jpg'"
+                        th:src="${cartItem.article.picture}"
                         alt="${cartItem.article.title}"
                     /></a>
                   </div>
                   <div class="col-8">
                     <a
+                            style="color: #232323;"
                       th:href="@{/article-detail?id=}+${cartItem.article.id}"
                       class="h6 bold d-inline-block"
                       th:text="${cartItem.article.title}"
@@ -37,13 +38,13 @@
                     </div>
                     <div>
                       <span
-                        ><b>Màu sắc</b>:
+                        ><b style="font-weight: 500; color:black;">Màu sắc</b>:
                         <span th:text="${cartItem.color}"></span
                       ></span>
                     </div>
                     <span
                       ><b>₫</b
-                      ><span
+                      ><span  style="color:#232323"
                         th:text="${#numbers.formatDecimal(cartItem.article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
                       ></span
                     ></span>
@@ -54,7 +55,7 @@
                 <div class="row align-items-center mt-3">
                   <div class="col-5">
                     <div class="row">
-                      <label
+                      <label style="color: var(--color-one);"
                         th:for="${cartItem.id}"
                         class="col-sm-6 col-form-label text-sm-right"
                         >Số lượng</label
@@ -73,7 +74,7 @@
                           style="display: none"
                           th:id="'update-item-'+${cartItem.id}"
                           type="submit"
-                          class="btn btn-sm btn-primary mt-2"
+                          class="btn btn-sm btn-primary mt-2 button-no-size"
                         >
                           Cập nhật
                         </button>
@@ -89,7 +90,7 @@
                     ></span>
                   </div>
                   <div class="col-2">
-                    <a
+                    <a style="color:var(--color-one);"
                       th:href="@{/shopping-cart/remove-item?id=}+${cartItem.id}"
                       ><i class="mb-1" data-feather="trash-2"></i
                     ></a>
@@ -99,10 +100,10 @@
             </div>
 
             <div class="text-center mt-3">
-              <div th:if="${#lists.isEmpty(cartItemList)}">
+              <div style="color:#232323;margin-bottom: 10px;font-size: 20px;font-weight: 500" th:if="${#lists.isEmpty(cartItemList)}">
                 Giỏ hàng còn trống!
               </div>
-              <p class="counter">TỔNG SỐ TIỀN</p>
+              <p class="counter title-2">TỔNG SỐ TIỀN</p>
               <h3 class="font-weight-bold">
                 <span th:if="${shoppingCart.getGrandTotal() == 0}">
                   0 VND
@@ -112,10 +113,10 @@
                   th:text="${#numbers.formatDecimal(shoppingCart.getGrandTotal(), 0, 'COMMA', 3, 'POINT') + ' VND'}"
                 ></span>
               </h3>
-              <a th:href="@{/store}" class="btn btn-info rounded-pill"
+              <a th:href="@{/store}" class="btn-one btn-buy"
                 ><i data-feather="arrow-left"></i> Quay lại cửa hàng</a
               >
-              <a th:href="@{/checkout}" class="btn btn-primary rounded-pill"
+              <a th:href="@{/checkout}" class="btn-one-1 btn-buy-1"
                 >Thanh toán <i data-feather="arrow-right"></i
               ></a>
             </div>

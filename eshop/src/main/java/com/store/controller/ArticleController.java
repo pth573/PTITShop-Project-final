@@ -143,18 +143,65 @@ public class ArticleController {
 		return "editArticle";
 	}
 
+
+//	@RequestMapping(value = "/edit", method = RequestMethod.POST)
+//	@PostMapping("/edit")
+//	public String editArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
+//		Article newArticle = new ArticleBuilder()
+//				.withTitle(article.getTitle())
+//				.stockAvailable(article.getStock())
+//				.withPrice(article.getPrice())
+//				.imageLink(article.getPicture())
+//				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
+//				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
+//				.ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
+//				.build();
+//		newArticle.setId(article.getId());
+//		articleService.saveArticle(newArticle);
+//		return "redirect:article-list";
+//	}
+
 	@RequestMapping(value = "/edit", method = RequestMethod.POST)
-	public String editArticlePost(@ModelAttribute("article") Article article, HttpServletRequest request) {
+	@PostMapping("/edit")
+	public String editArticlePost(HttpServletRequest request,
+	                              @RequestParam("id") Long id,
+	                              @RequestParam("title") String title,
+	                              @RequestParam("category") String category,
+	                              @RequestParam("color") String color,
+	                              @RequestParam("type") String type,
+	                              @RequestParam("price") double price,
+	                              @RequestParam("stock") int stock,
+	                              @RequestParam("picture") MultipartFile picture) throws IOException {
+		String imageLink=null;
+		if (picture != null && !picture.isEmpty()) {
+			// Xử lý tệp ảnh và lưu vào thư mục uploads
+			String fileName = StringUtils.cleanPath(picture.getOriginalFilename());
+//			Path uploadDir = Paths.get("C:\\Users\\datha\\Desktop\\PTITShop-Project\\eshop\\src\\main\\resources\\static\\image\\QD09");
+			Path uploadDir = Paths.get("./static/image/QD09/");
+			if (!Files.exists(uploadDir)) {
+				Files.createDirectories(uploadDir);
+			}
+			try (InputStream inputStream = picture.getInputStream()) {
+				Path filePath = uploadDir.resolve(fileName);
+				Files.copy(inputStream, filePath, StandardCopyOption.REPLACE_EXISTING);
+			}
+			imageLink = "/image/QD09/" + fileName; // Đường dẫn tới file ảnh
+		}
+		Article existingArticle = articleService.findArticleById(id);
+		if(imageLink==null)
+		{
+			imageLink = existingArticle.getPicture();
+		}
 		Article newArticle = new ArticleBuilder()
-				.withTitle(article.getTitle())
-				.stockAvailable(article.getStock())
-				.withPrice(article.getPrice())
-				.imageLink(article.getPicture())
+				.withTitle(title)
+				.stockAvailable(stock)
+				.withPrice(price)
+				.imageLink(imageLink)
 				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
 				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
 				.ofType(Arrays.asList(request.getParameter("type").split("\\s*,\\s*")))
 				.build();
-		newArticle.setId(article.getId());
+		newArticle.setId(id);
 		articleService.saveArticle(newArticle);
 		return "redirect:article-list";
 	}
