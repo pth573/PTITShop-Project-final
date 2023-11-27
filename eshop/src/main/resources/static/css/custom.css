@@ -99,7 +99,7 @@
 .btn-one{
     color: #FFFFFF;
     background: var(--color-one);
-    border: 2px solid var(--color-one);
+    border: 2px solid var(--color-one)!important;
     padding: 15px 40px;
     display: inline-block;
     border-radius: 15px;
@@ -111,6 +111,7 @@
 .btn-buy:hover{
     background: #f1f1f1;
     color:#F5ADAE;
+    border-color: var(--color-one);
 }
 
 .btn-one-1{
