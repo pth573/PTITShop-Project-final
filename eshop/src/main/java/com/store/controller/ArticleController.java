@@ -75,6 +75,7 @@ public class ArticleController {
 	                             @RequestParam("type") String type,
 	                             @RequestParam("price") double price,
 	                             @RequestParam("stock") int stock,
+								 @RequestParam("description") String description,
 	                             @RequestParam("picture") MultipartFile picture) {
 		try {
 			// Xử lý tệp ảnh và lưu vào thư mục uploads
@@ -96,6 +97,7 @@ public class ArticleController {
 					.withTitle(title)
 					.stockAvailable(stock)
 					.withPrice(price)
+					.withDesciption(description)
 					.imageLink(imageLink)
 					.color(Arrays.asList(color.split("\\s*,\\s*")))
 					.ofCategories(Arrays.asList(category.split("\\s*,\\s*")))
@@ -171,6 +173,7 @@ public class ArticleController {
 	                              @RequestParam("type") String type,
 	                              @RequestParam("price") double price,
 	                              @RequestParam("stock") int stock,
+								  @RequestParam("description") String description,
 	                              @RequestParam("picture") MultipartFile picture) throws IOException {
 		String imageLink=null;
 		if (picture != null && !picture.isEmpty()) {
@@ -196,6 +199,7 @@ public class ArticleController {
 				.withTitle(title)
 				.stockAvailable(stock)
 				.withPrice(price)
+				.withDesciption(description)
 				.imageLink(imageLink)
 				.color(Arrays.asList(request.getParameter("color").split("\\s*,\\s*")))
 				.ofCategories(Arrays.asList(request.getParameter("category").split("\\s*,\\s*")))
