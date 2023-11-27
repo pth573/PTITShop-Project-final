@@ -136,10 +136,6 @@ a {
 /* End Section Three */
 
 /*Section Banner*/
-.section-two {
-  margin-top: 15px;
-}
-
 .section-two .inner-box {
   box-shadow: 0 2px 48px 0 rgba(0, 0, 0, 0.1);
   background: #fff;
@@ -215,10 +211,8 @@ a {
 
 /* View Action */
 .view-action {
-  margin-top: 0;
-  padding: 20px;
-  margin-bottom: 20px;
-  background: #efefef;
+  padding: 56px 0;
+  background: #fff;
 }
 
 .view-action .inner-wrap {
@@ -283,10 +277,6 @@ a {
 /* End View Action */
 
 /* Testimonials */
-.testimonials {
-  margin-top: 80px;
-}
-
 .testimonials .inner-box {
   width: 100%;
   height: 100%;
