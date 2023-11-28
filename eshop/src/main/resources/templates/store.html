@@ -161,7 +161,7 @@
                     <div class="card card-product" th:each="article : ${articles}">
                         <div class="card-body inner-box">
                             <div class="inner-image">
-                                <a th:href="@{/article-detail?id=}+${article.id}" class="border"><img
+                                <a th:href="@{/article-detail?id=}+${article.id}"><img
                                         class="card-img-top"
                                         th:src="${article.picture}"
                                         alt="Card image cap"></a>

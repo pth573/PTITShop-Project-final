@@ -6,10 +6,10 @@
     <div th:replace="common/header :: navbar"></div>
 
     <div class="container page-content">
-      <form th:action="@{/checkout}" method="post">
+      <form th:action="@{/checkout}" method="post" class="mt-5">
         <div class="row">
           <!-- Checkout Info -->
-          <div class="col-lg-8 mb-3">
+          <div class="col-lg-8">
             <div th:if="${missingRequiredField}">
               <h5 class="alert alert-warning title-2">
                 Xin vui lòng nhập đủ thông tin cần thiết

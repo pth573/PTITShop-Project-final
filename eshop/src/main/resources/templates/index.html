@@ -51,19 +51,19 @@
     <!--Danh mục sản phẩm-->
     <section class="section categoryU">
         <div class="container text-center">
-            <h4 class="font-weight-bold font-new">Danh mục sản phẩm</h4>
+            <h4 class="font-weight-bold font-new">Một số sản phẩm nổi bật</h4>
             <div class="featured-items mt-4">
-                <div class="card card-product card-featured" th:each="article : ${articles}">
-                    <div class="card-body">
-                        <a th:href="@{/article-detail?id=}+${article.id}">
-                            <img class="card-img-top"
-                                th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"
-                                alt="Card image cap">
+                <div class="card card-product card-featured" th:each="article : ${articles} ">
+                    <div class="card-body d-flex flex-column justify-content-between" style="height: 100%;">
+                        <a th:href="@{/article-detail?id=}+${article.id}" class="mb-auto">
+                            <img class="card-img-top" th:src="${article.picture}" th:alt="${article.title}">
                         </a>
-                        <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new"
-                            th:text="${article.title}"></a>
-                        <div class="price"><span
-                                th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
+                        <div>
+                            <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new"
+                                th:text="${article.title}"></a>
+                            <p class="price"><span
+                                    th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
+                            </p>
                         </div>
                     </div>
                 </div>

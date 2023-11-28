@@ -251,8 +251,8 @@ section.categoryU {
 }
 
 .title-bold {
-  color: #232323!important;
-  font-weight: 600!important;
+  color: #232323 !important;
+  font-weight: 600 !important;
 }
 
 .store-1 {
@@ -684,7 +684,7 @@ li.active a {
 }
 
 /*Fix ảnh trang store*/
-.inner-box{
+.inner-box {
   display: flex;
   flex-direction: column;
   padding: 0;
@@ -692,9 +692,10 @@ li.active a {
   justify-content: center;
 }
 
-.inner-image{
-  width: 100%;
+.inner-image {
+  width: 80%;
   height: 80%;
+  margin: 16px;
 }
 
 .inner-image a {
@@ -703,30 +704,27 @@ li.active a {
   height: 100%;
 }
 
-.inner-image a img{
+.inner-image a img {
   width: 100%;
   height: 100%;
   object-fit: contain;
   aspect-ratio: 1/1;
 }
 
-.inner-info{
-  flex:1;
+.inner-info {
+  flex: 1;
   height: 30%;
   display: flex;
-  flex-direction:column ;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
 }
 
-.inner-info .price{
+.inner-info .price {
   text-align: center;
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-
-
 /*End Fix ảnh trang store*/
-
