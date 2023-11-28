@@ -15,14 +15,19 @@
         enctype="multipart/form-data"
       >
         <fieldset>
-          <legend style="margin-bottom: 20px;
-    text-align: center;
-    font-size: 40px;" class="center-block title-bold">Sửa thông tin sản phẩm</legend>
+          <legend
+            style="margin-bottom: 20px; text-align: center; font-size: 40px"
+            class="center-block title-bold"
+          >
+            Sửa thông tin sản phẩm
+          </legend>
 
           <input hidden="hidden" name="id" th:value="${article.id}" />
 
           <div class="form-group row">
-            <label for="title" class="col-2 col-form-label text-right title-2 title-form-custom"
+            <label
+              for="title"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
               >Tên sản phẩm</label
             >
             <div class="col-6">
@@ -32,14 +37,36 @@
                 class="form-control inner-input"
                 id="title"
                 name="title"
+                required
               />
             </div>
           </div>
+
           <div class="form-group row">
-            <label for="categories" class="col-2 col-form-label text-right title-2 title-form-custom"
-              >Danh mục</label
+            <label
+              for="desc"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
+              >Mô tả sản phẩm</label
             >
             <div class="col-6">
+              <input
+                th:value="${article.description}"
+                type="text"
+                class="form-control inner-input"
+                id="desc"
+                name="description"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="form-group row">
+            <label
+              for="categories"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
+              >Danh mục</label
+            >
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -47,6 +74,7 @@
                 name="category"
                 data-role="tagsinput"
                 th:value="${preselectedCategories}"
+                required
               />
             </div>
             <div class="col-4">
@@ -60,10 +88,12 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="sizes" class="col-2 col-form-label text-right title-2 title-form-custom"
+            <label
+              for="sizes"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
               >Màu sắc</label
             >
-            <div class="col-6">
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -71,6 +101,7 @@
                 name="color"
                 data-role="tagsinput"
                 th:value="${preselectedColors}"
+                required
               />
             </div>
             <div class="col-4">
@@ -84,10 +115,12 @@
             </div>
           </div>
           <div class="form-group row">
-            <label for="types" class="col-2 col-form-label text-right title-2 title-form-custom"
+            <label
+              for="types"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
               >Phân loại</label
             >
-            <div class="col-6">
+            <div class="col-6 inner-button">
               <input
                 type="text"
                 class="form-control inner-input"
@@ -95,12 +128,13 @@
                 name="type"
                 data-role="tagsinput"
                 th:value="${preselectedTypes}"
+                required
               />
             </div>
             <div class="col-4">
               <button
                 type="button"
-                class="btn btn-primary btn-type badge badge-pill badge-primary mr-1 mb-1  button-no-size-2"
+                class="btn btn-primary btn-type badge badge-pill badge-primary mr-1 mb-1 button-no-size-2"
                 th:each="item : ${allTypes}"
                 th:text="${#strings.capitalize(item)}"
                 th:id="type+${item}"
@@ -109,12 +143,19 @@
           </div>
 
           <div class="form-group row">
-            <label for="price" class="col-2 col-form-label text-right title-2 title-form-custom"
+            <label
+              for="price"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
               >Giá tiền</label
             >
             <div class="col-6 input-group">
               <div class="input-group-prepend">
-                <span style="background-color: var(--color-one);color: #FFFFFF" class="input-group-text" id="basic-addon1">VND</span>
+                <span
+                  style="background-color: var(--color-one); color: #ffffff"
+                  class="input-group-text"
+                  id="basic-addon1"
+                  >VND</span
+                >
               </div>
               <input
                 th:value="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"
@@ -123,13 +164,16 @@
                 step="1"
                 class="form-control inner-input"
                 id="price"
-                placeholder="List Price"
+                placeholder="Đơn vị: nghìn VND"
+                required
               />
             </div>
           </div>
 
           <div class="form-group row">
-            <label for="stock" class="col-2 col-form-label text-right title-2 title-form-custom"
+            <label
+              for="stock"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
               >Số lượng</label
             >
             <div class="col-6">
@@ -145,21 +189,43 @@
           </div>
 
           <div class="form-group row">
-            <label for="picture" class="col-2 col-form-label text-right title-2 title-form-custom">Ảnh sản phẩm</label>
+            <label
+              for="picture"
+              class="col-2 col-form-label text-right title-2 title-form-custom"
+              >Ảnh sản phẩm</label
+            >
             <div class="col-6">
-              <input type="file" class="form-control inner-input" id="picture" name="picture" onchange="previewImage(event)" />
+              <input
+                type="file"
+                class="form-control inner-input"
+                id="picture"
+                name="picture"
+                onchange="previewImage(event)"
+              />
             </div>
           </div>
           <div class="form-group row prv-1">
             <div class="col-8 offset-2 prv-2">
-              <img id="imagePreview" th:src="${article.picture}" alt="Ảnh xem trước" style="display: block; max-width: 100%; height: auto;" />
+              <img
+                id="imagePreview"
+                th:src="${article.picture}"
+                alt="Ảnh xem trước"
+                style="display: block; max-width: 100%; height: auto"
+              />
             </div>
           </div>
 
           <div class="form-group row">
             <div class="offset-2 col-6">
-              <button type="submit" class="btn btn-primary button-no-size">Cập nhật</button>
-              <a class="btn btn-danger button-no-size-1" th:href="@{/article/article-list}"
+              <button
+                type="submit"
+                class="btn btn-primary button-no-size-1 mr-2"
+              >
+                Cập nhật
+              </button>
+              <a
+                class="btn btn-danger button-no-size"
+                th:href="@{/article/article-list}"
                 >Huỷ</a
               >
             </div>

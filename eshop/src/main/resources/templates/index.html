@@ -1,436 +1,362 @@
 <!doctype html>
 <html lang="en" xmlns:th="http://www.w3.org./1999/xhtml">
+
 <head th:replace="common/header :: common-header">
 
 <body class="d-flex flex-column">
-<div th:replace="common/header :: navbar"></div>
+    <div th:replace="common/header :: navbar"></div>
 
-
-<div class="jumbotron jumbotron-fluid mt-0" th:style="'background-image: url(/image/background/8.jpg);'">
-    <div class="container">
-        <div class="row text-left py-5">
-            <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
-                <h1 class="font-weight-bold" style="font-size: 120px; color: #fff; text-shadow: 2px 2px #000;">PTIT
-                    Shop</h1>
-                <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm"
-                   style="font-size: 25px">Mua ngay</a>
+    <!-- <div id="carousel" class="carousel slide mt-3" data-bs-ride="carousel" style="position: relative;">
+        <div class="carousel-inner">
+            <div class="carousel-item active slide-custom">
+                <div class="w-100" th:style="'background-image: url(./image/background/8.jpg);'">
+                </div>
             </div>
         </div>
-    </div>
-</div>
-</div>
-<!-- End Section Two -->
-
-<!-- Section Three -->
-<div class="section-three">
-    <div class="container">
-        <div class="inner-wrap">
-            <div class="inner-content">
-                <h3 class="inner-sub-title">App Download</h3>
-                <h2 class="inner-title">Bạn có thể đặt hàng qua App</h2>
-            </div>
-            <div class="inner-image">
-                <img src="/image/QD09/App.jpg" alt="">
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End Section Three -->
-
-<!-- View in Action -->
-<div class="view-action">
-    <div class="container">
-        <div class="box-head box-head-center">
-            <h2 class="inner-title">
-                Video giới thiệu sản phẩm
-            </h2>
-        </div>
-        <div class="inner-wrap">
-            <img src="/image/QD09/viewAction.jpg" alt="">
-            <div class="inner-button">
-                <i class="fa-solid fa-play"></i>
-            </div>
-        </div>
-    </div>
-</div>
-<!-- End View in Action -->
-
-<!--Danh mục sản phẩm-->
-<section class="section py-5 categoryU">
-    <div class="container text-center">
-        <h4 class="font-weight-bold font-new">Danh mục sản phẩm</h4>
-        <div class="featured-items mt-4">
-            <div class="card card-product card-featured" th:each="article : ${articles}">
-                <div class="card-body">
-                    <a th:href="@{/article-detail?id=}+${article.id}">
-                        <img class="card-img-top"
-                             th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"
-                             alt="Card image cap">
-                    </a>
-                    <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new"
-                       th:text="${article.title}"></a>
-                    <div class="price"><span
-                            th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
-                    </div>
+        <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm">Mua
+            ngay</a>
+    </div> -->
+    <div class="jumbotron jumbotron-fluid mt-0" th:style="'background-image: url(/image/background/8.jpg);'">
+        <div class="container">
+            <div class="row text-left py-5">
+                <div class="col-sm-12 col-md-10 offset-md-1 col-lg-8 offset-lg-3 col-xl-6 offset-xl-6 my-auto">
+                    <h1 class="font-weight-bold" style="font-size: 120px; color: #fff; text-shadow: 2px 2px #000;">PTIT
+                        Shop</h1>
+                    <a th:href="@{/store}" class="btn rounded-pill btn-one btn-buy" data-addclass-on-xs="btn-sm"
+                        style="font-size: 25px">Mua ngay</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
-<!--End Danh mục sản phẩm-->
+    <!-- End Section Two -->
 
-
-<!-- Section Banner  -->
-<div class="section-two">
-    <div class="container">
-        <div class="row">
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-icon">
-                        <i class="fa-solid fa-truck-fast"></i>
-                    </div>
-                    <h3 class="inner-title">
-                        Giao hàng miễn phí
-                    </h3>
-                    <p class="inner-desc">Giao hàng miễn phí toàn quốc cho sinh viên PTIT</p>
-                </div>
+    <!-- View in Action -->
+    <div class="view-action">
+        <div class="container">
+            <div class="box-head box-head-center">
+                <h2 class="inner-title">
+                    Video giới thiệu sản phẩm
+                </h2>
             </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-icon">
-                        <i class="fa-solid fa-phone-volume"></i>
-                    </div>
-                    <h3 class="inner-title">
-                        Hỗ trợ 24/7
-                    </h3>
-                    <p class="inner-desc">Hỗ trợ, tư vấn nhiệt tình các sản phẩm mới nhất</p>
-                </div>
-            </div>
-            <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-icon">
-                        <i class="fa-solid fa-gift"></i>
-                    </div>
-                    <h3 class="inner-title">
-                        Quà tặng
-                    </h3>
-                    <p class="inner-desc">Quà tặng miễn phí cho nhiều dịp lễ, voucher giảm giá cho các thành viên
-                        VIP</p>
+            <div class="inner-wrap">
+                <img src="/image/QD09/viewAction.jpg" alt="">
+                <div class="inner-button">
+                    <i class="fa-solid fa-play"></i>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!-- EndSection Banner  -->
+    <!-- End View in Action -->
 
-<!--Sản phẩm nổi bật-->
-<!-- <section class="section pt-5 hotProduct">
-    <div class="container text-center">
-        <h4 class="font-weight-bold">Sản phẩm phổ biến</h4>
-        <div id="randomImagesContainer" style="display: flex; justify-content: center;"></div>
-        <script>
-            // Demo duong dan anh
-            var imagePaths = [
-                '/image/article/pictures/602410-MLA47411235317_092021.jpg',
-                '/image/article/pictures/602410-MLA47411235317_092021.jpg',
-                '/image/article/pictures/602410-MLA47411235317_092021.jpg',
-                '/image/article/pictures/602410-MLA47411235317_092021.jpg',
-                '/image/article/pictures/602410-MLA47411235317_092021.jpg'
-            ];
-
-            function getRandomImages(arr, count) {
-                var shuffled = arr.slice(0), i = arr.length, min = i - count, temp, index;
-                while (i-- > min) {
-                    index = Math.floor((i + 1) * Math.random());
-                    temp = shuffled[index];
-                    shuffled[index] = shuffled[i];
-                    shuffled[i] = temp;
-                }
-                return shuffled.slice(min);
-            }
-
-            var randomImagePaths = getRandomImages(imagePaths, 5);
-
-            var imagesContainer = document.getElementById('randomImagesContainer');
-            randomImagePaths.forEach(function (imagePath, index) {
-                var imgElement = document.createElement('img');
-                imgElement.src = imagePath;
-                imgElement.alt = 'Ảnh ngẫu nhiên';
-                imgElement.style.width = '200px'; // Đặt chiều rộng của ảnh
-                imgElement.style.marginRight = '5px'; // Khoảng cách giữa các ảnh
-                imagesContainer.appendChild(imgElement);
-            });
-        </script>
-    </div>
-</section> -->
-<!--End sản phẩm nổi bật-->
-
-<!--Feedback-->
-<div class="testimonials">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="box-head">
-                    <h2 class="inner-title">
-                        Feedback từ những sinh viên thân yêu
-                    </h2>
-                    <p class="inner-desc">
-                        PTIT cho mình một môi trường năng động, những giảng viên tận tình và cho mình cả những người bạn
-                        tuyệt vời.
-                        Chúng tớ sẽ cháy hết thanh xuân cùng với PTIT!
-                    </p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-4 col-md-4 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-main">
-                        <div class="inner-content">
-                            Với logo đỏ thắm trước ngực cùng màu áo đỏ trắng thương hiệu, tớ tự hào khi là sinh viên của
-                            PTIT!
+    <!--Danh mục sản phẩm-->
+    <section class="section categoryU">
+        <div class="container text-center">
+            <h4 class="font-weight-bold font-new">Danh mục sản phẩm</h4>
+            <div class="featured-items mt-4">
+                <div class="card card-product card-featured" th:each="article : ${articles}">
+                    <div class="card-body">
+                        <a th:href="@{/article-detail?id=}+${article.id}">
+                            <img class="card-img-top"
+                                th:src="${article.picture} ? '/image/article/pictures/'+${article.picture}+'.jpg' : '/image/article/itemexample.jpg'"
+                                alt="Card image cap">
+                        </a>
+                        <a th:href="@{/article-detail?id=}+${article.id}" class="card-title font-new"
+                            th:text="${article.title}"></a>
+                        <div class="price"><span
+                                th:text="${#numbers.formatDecimal(article.price, 0, 'COMMA', 3, 'POINT') + ' VND'}"></span>
                         </div>
                     </div>
-                    <div class="inner-info">
-                        <img src="/image/QD09/FB1.png" alt="Ảnh 1">
-                        <h3 class="inner-name">
-                            Nguyễn Thị Lan
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--End Danh mục sản phẩm-->
+
+    <!-- Section Banner  -->
+    <div class="section-two">
+        <div class="container">
+            <div class="row">
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-truck-fast"></i>
+                        </div>
+                        <h3 class="inner-title">
+                            Giao hàng miễn phí
                         </h3>
-                        <p class="inner-position">
-                            Sinh viên PTIT - cơ sở Hà Nội
+                        <p class="inner-desc">Giao hàng miễn phí toàn quốc cho sinh viên PTIT</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-phone-volume"></i>
+                        </div>
+                        <h3 class="inner-title">
+                            Hỗ trợ 24/7
+                        </h3>
+                        <p class="inner-desc">Hỗ trợ, tư vấn nhiệt tình các sản phẩm mới nhất</p>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-lg-4 col-md-6 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-icon">
+                            <i class="fa-solid fa-gift"></i>
+                        </div>
+                        <h3 class="inner-title">
+                            Quà tặng
+                        </h3>
+                        <p class="inner-desc">Quà tặng miễn phí cho nhiều dịp lễ, voucher giảm giá cho các thành viên
+                            VIP</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- EndSection Banner  -->
+
+    <!--Feedback-->
+    <div class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-head">
+                        <h2 class="inner-title">
+                            Feedback từ những sinh viên thân yêu
+                        </h2>
+                        <p class="inner-desc">
+                            PTIT cho mình một môi trường năng động, những giảng viên tận tình và cho mình cả những người
+                            bạn
+                            tuyệt vời.
+                            Chúng tớ sẽ cháy hết thanh xuân cùng với PTIT!
                         </p>
                     </div>
                 </div>
             </div>
-            <div class="col-xl-4 col-md-4 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-main">
-                        <div class="inner-content">
-                            Những cuốn giáo trình, tài liệu ở PTIT Shop đã giúp mình thực hiện ước mơ học bổng. Còn bạn
-                            thì sao?
-                        </div>
-                    </div>
-                    <div class="inner-info">
-                        <img src="/image/QD09/FB2.jpg" alt="Ảnh 1">
-                        <h3 class="inner-name">
-                            Nguyễn Hữu Quang Hòa
-                        </h3>
-                        <p class="inner-position">
-                            Sinh viên PTIT - cơ sở Hà Nội
-                        </p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-xl-4 col-md-4 col-sm-6 col-12">
-                <div class="inner-box">
-                    <div class="inner-main">
-                        <div class="inner-content">
-                            Tự hào khi khoác lên mình long bào của PTIT. Mình cực kì ủng hộ PTIT Shop vì đã mang đến cho
-                            sinh
-                            viên những chiếc áo chất lượng như này!
-                        </div>
-                    </div>
-                    <div class="inner-info">
-                        <img src="/image/QD09/FB3.jpg" alt="Ảnh 1">
-                        <h3 class="inner-name">
-                            Nguyễn Tiến Thắng
-                        </h3>
-                        <p class="inner-position">
-                            Sinh viên PTIT - cơ sở Hồ Chí Minh
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-<!--End Feedback-->
 
-<!--Liên lạc-->
-<div class="contact">
-    <div class="container">
-        <div class="row">
-            <div class="col-12">
-                <div class="box-head">
-                    <h2 class="inner-title">
-                        Liên lạc
-                    </h2>
-                    <p class="inner-desc">Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần !!!</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="col-xl-5 col-lg-5 col-md-12 mb-3">
-                <div class="inner-info">
-                    <div class="inner-list">
-                        <div class="inner-item">
-                            <div class="inner-icon">
-                                <i class="fa-solid fa-location-dot"></i>
-                            </div>
+            <div class="row">
+                <div class="col-xl-4 col-md-4 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-main">
                             <div class="inner-content">
-                                <div class="inner-title">
-                                    Địa điểm:
+                                Với logo đỏ thắm trước ngực cùng màu áo đỏ trắng thương hiệu, tớ tự hào khi là sinh viên
+                                của PTIT!
+                            </div>
+                        </div>
+                        <div class="inner-info">
+                            <img src="/image/QD09/FB1.png" alt="Ảnh 1">
+                            <h3 class="inner-name">
+                                Nguyễn Thị Lan
+                            </h3>
+                            <p class="inner-position">
+                                Sinh viên PTIT - cơ sở Hà Nội
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-main">
+                            <div class="inner-content">
+                                Những cuốn giáo trình, tài liệu ở PTIT Shop đã giúp mình thực hiện ước mơ học bổng. Còn
+                                bạn thì sao?
+                            </div>
+                        </div>
+                        <div class="inner-info">
+                            <img src="/image/QD09/FB2.jpg" alt="Ảnh 1">
+                            <h3 class="inner-name">
+                                Nguyễn Hữu Quang Hòa
+                            </h3>
+                            <p class="inner-position">
+                                Sinh viên PTIT - cơ sở Hà Nội
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xl-4 col-md-4 col-sm-6 col-12">
+                    <div class="inner-box">
+                        <div class="inner-main">
+                            <div class="inner-content">
+                                Tự hào khi khoác lên mình long bào của PTIT. Mình cực kì ủng hộ PTIT Shop vì đã mang đến
+                                cho sinh viên những chiếc áo chất lượng như này!
+                            </div>
+                        </div>
+                        <div class="inner-info">
+                            <img src="/image/QD09/FB3.jpg" alt="Ảnh 1">
+                            <h3 class="inner-name">
+                                Nguyễn Tiến Thắng
+                            </h3>
+                            <p class="inner-position">
+                                Sinh viên PTIT - cơ sở Hồ Chí Minh
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--End Feedback-->
+
+    <!--Liên lạc-->
+    <div class="contact">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="box-head">
+                        <h2 class="inner-title">
+                            Liên lạc
+                        </h2>
+                        <p class="inner-desc">Hãy liên hệ với chúng tôi bất cứ khi nào bạn cần !!!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-xl-5 col-lg-5 col-md-12 mb-3">
+                    <div class="inner-info">
+                        <div class="inner-list">
+                            <div class="inner-item">
+                                <div class="inner-icon">
+                                    <i class="fa-solid fa-location-dot"></i>
                                 </div>
-                                <div class="inner-desc">
-                                    Km10 Nguyễn Trãi, Mỗ Lao, Hà Đông, Hà Nội
+                                <div class="inner-content">
+                                    <div class="inner-title">
+                                        Địa điểm:
+                                    </div>
+                                    <div class="inner-desc">
+                                        Km10 Nguyễn Trãi, Mỗ Lao, Hà Đông, Hà Nội
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!--                        <div class="inner-item">-->
-                        <!--                            <div class="inner-icon">-->
-                        <!--                                <i class="fa-solid fa-location-dot"></i>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="inner-content">-->
-                        <!--                                <div class="inner-title">-->
-                        <!--                                    Location:-->
-                        <!--                                </div>-->
-                        <!--                                <div class="inner-desc">-->
-                        <!--                                    123 đường ABC-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                        <!--                        <div class="inner-item">-->
-                        <!--                            <div class="inner-icon">-->
-                        <!--                                <i class="fa-solid fa-location-dot"></i>-->
-                        <!--                            </div>-->
-                        <!--                            <div class="inner-content">-->
-                        <!--                                <div class="inner-title">-->
-                        <!--                                    Location:-->
-                        <!--                                </div>-->
-                        <!--                                <div class="inner-desc">-->
-                        <!--                                    123 đường ABC-->
-                        <!--                                </div>-->
-                        <!--                            </div>-->
-                        <!--                        </div>-->
-                    </div>
-                    <div class="inner-map">
-                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.292513285951!2d105.7848629749993!3d20.980908489420973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1700904293622!5m2!1svi!2s"
+                        <div class="inner-map">
+                            <iframe
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3725.292513285951!2d105.7848629749993!3d20.980908489420973!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3135accdd8a1ad71%3A0xa2f9b16036648187!2zSOG7jWMgdmnhu4duIEPDtG5nIG5naOG7hyBCxrB1IGNow61uaCB2aeG7hW4gdGjDtG5n!5e0!3m2!1svi!2s!4v1700904293622!5m2!1svi!2s"
                                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                                 referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-xl-7 col-lg-7 col-md-12 mb-3">
-                <div class="inner-form">
-                    <form action="">
-                        <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="name">Họ tên</label>
-                                    <input id="name" type="text" class="form-control">
+                <div class="col-xl-7 col-lg-7 col-md-12 mb-3">
+                    <div class="inner-form">
+                        <form action="">
+                            <div class="row">
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="name">Họ tên</label>
+                                        <input id="name" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
+                                    <div class="form-group">
+                                        <label for="email">Email</label>
+                                        <input id="email" type="email" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="subject">Tiêu đề</label>
+                                        <input id="subject" type="text" class="form-control">
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-group">
+                                        <label for="content">Nội dung</label>
+                                        <textarea id="content" class="form-control"></textarea>
+                                    </div>
+                                </div>
+                                <div class="col-12 text-center">
+                                    <button class="btn-one btn-buy">Gửi ngay</button>
                                 </div>
                             </div>
-                            <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12">
-                                <div class="form-group">
-                                    <label for="email">Email</label>
-                                    <input id="email" type="email" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="subject">Tiêu đề</label>
-                                    <input id="subject" type="text" class="form-control">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="form-group">
-                                    <label for="content">Nội dung</label>
-                                    <textarea id="content" class="form-control"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-12 text-center">
-                                <button class="btn-one btn-buy">Gửi ngay</button>
-                            </div>
-                        </div>
-                    </form>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-<!--End liên lạc-->
+    <!--End liên lạc-->
 
 
-<div th:replace="common/header :: footer"></div>
-<div th:replace="common/header :: body-scripts"></div>
+    <div th:replace="common/header :: footer"></div>
+    <div th:replace="common/header :: body-scripts"></div>
 
-<script type="text/javascript">
-    $(document).ready(function () {
-        $('.featured-items').slick({
-            infinite: true,
-            slidesToShow: 4,
-            slidesToScroll: 4,
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3,
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.featured-items').slick({
+                infinite: true,
+                slidesToShow: 4,
+                slidesToScroll: 4,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3,
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 480,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
                     }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 480,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                }
-            ]
-        })
-            .on('setPosition', function (event, slick) {
-                slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+                ]
+            })
+                .on('setPosition', function (event, slick) {
+                    slick.$slides.css('height', slick.$slideTrack.height() + 'px');
+                });
+            $('.featured-types').slick({
+                slidesToShow: 6,
+                slidesToScroll: 1,
+                responsive: [
+                    {
+                        breakpoint: 1200,
+                        settings: {
+                            slidesToShow: 5,
+                            slidesToScroll: 1,
+                        }
+                    },
+                    {
+                        breakpoint: 992,
+                        settings: {
+                            slidesToShow: 4,
+                            slidesToScroll: 4
+                        }
+                    },
+                    {
+                        breakpoint: 768,
+                        settings: {
+                            slidesToShow: 3,
+                            slidesToScroll: 3
+                        }
+                    },
+                    {
+                        breakpoint: 550,
+                        settings: {
+                            slidesToShow: 2,
+                            slidesToScroll: 2
+                        }
+                    },
+                    {
+                        breakpoint: 380,
+                        settings: {
+                            slidesToShow: 1,
+                            slidesToScroll: 1
+                        }
+                    },
+                ]
             });
-        $('.featured-types').slick({
-            slidesToShow: 6,
-            slidesToScroll: 1,
-            responsive: [
-                {
-                    breakpoint: 1200,
-                    settings: {
-                        slidesToShow: 5,
-                        slidesToScroll: 1,
-                    }
-                },
-                {
-                    breakpoint: 992,
-                    settings: {
-                        slidesToShow: 4,
-                        slidesToScroll: 4
-                    }
-                },
-                {
-                    breakpoint: 768,
-                    settings: {
-                        slidesToShow: 3,
-                        slidesToScroll: 3
-                    }
-                },
-                {
-                    breakpoint: 550,
-                    settings: {
-                        slidesToShow: 2,
-                        slidesToScroll: 2
-                    }
-                },
-                {
-                    breakpoint: 380,
-                    settings: {
-                        slidesToShow: 1,
-                        slidesToScroll: 1
-                    }
-                },
-            ]
         });
-    });
-</script>
+    </script>
 </body>
+
 </html>

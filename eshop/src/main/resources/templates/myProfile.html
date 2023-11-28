@@ -18,12 +18,12 @@
                 class="rounded-circle mb-3"
               />
               <h5 style="font-width: 600;"
-                class="bold mb-0 title-2"
+                class="bold mb-0"
                 th:text="${#strings.capitalize(user.username)}"
               ></h5>
               <small
                 class="text-secondary title-bold"
-                th:text="'Lần cuối cập nhật vào: ' +${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"
+                th:text="'Lần cập nhật cuối: ' +${#dates.format(#dates.createNow(), 'dd-MM-yyyy')}"
               ></small>
             </div>
             <div class="list-group list-group-flush quydat">
