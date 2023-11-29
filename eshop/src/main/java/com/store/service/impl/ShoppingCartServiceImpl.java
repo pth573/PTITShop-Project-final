@@ -41,7 +41,7 @@ public class ShoppingCartServiceImpl implements ShoppingCartService {
     @CacheEvict(value = "itemcount", allEntries = true)
     public CartItem addArticleToShoppingCart(Article article, User user, int qty, String color) {
         ShoppingCart shoppingCart = this.getShoppingCart(user);
-        CartItem cartItem = shoppingCart.findCartItemByArticleAndSize(article.getId(), color);
+        CartItem cartItem = shoppingCart.findCartItemByArticleAndColor(article.getId(), color);
         if (cartItem != null && cartItem.hasSameColorThan(color)) {
             cartItem.addQuantity(qty);
             cartItem.setColor(color);

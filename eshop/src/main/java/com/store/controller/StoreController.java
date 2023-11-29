@@ -27,7 +27,7 @@ public class StoreController {
 		SortFilter sortFilter = new SortFilter(filters.getSort());
 		Page<Article> pageresult = articleService.findArticlesByCriteria(PageRequest.of(pagenumber,9, sortFilter.getSortType()),
 																filters.getPricelow(), filters.getPricehigh(), 
-																filters.getSize(), filters.getCategory(), filters.getType(), filters.getSearch());
+																filters.getColor(), filters.getCategory(), filters.getType(), filters.getSearch());
 		model.addAttribute("allCategories", articleService.getAllCategories());
 		model.addAttribute("allTypes", articleService.getAllTypes());
 		model.addAttribute("allColors", articleService.getAllColors());

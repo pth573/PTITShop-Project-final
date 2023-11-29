@@ -52,17 +52,17 @@
                     </div>
                     <div class="card">
                         <div class="card-header">
-                            <a href="#filter-size" data-toggle="collapse" aria-expanded="true"
-                               aria-controls="filter-size" role="button" class="h6 title-2">
+                            <a href="#filter-color" data-toggle="collapse" aria-expanded="true"
+                               aria-controls="filter-color" role="button" class="h6 title-2">
                                 MÀU SẮC
                             </a>
                         </div>
-                        <div id="filter-size" class="collapse show">
+                        <div id="filter-color" class="collapse show">
                             <div class="card-body">
                                 <div th:each="item : ${#lists.sort(allColors)}" class="custom-control custom-checkbox">
-                                    <input type="checkbox" class="custom-control-input" th:id="${item}" th:name="size"
+                                    <input type="checkbox" class="custom-control-input" th:id="${item}" th:name="color"
                                            th:value="${item}"
-                                           th:checked="${((param.size != null) and (#lists.contains(param.size, item )))} ? checked">
+                                           th:checked="${((param.color != null) and (#lists.contains(param.color, item )))} ? checked">
                                     <label class="custom-control-label" th:for="${item}" th:text="${item}"></label>
                                 </div>
                             </div>

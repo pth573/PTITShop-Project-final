@@ -18,7 +18,7 @@ public class CartItem {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int qty;
-    private String size;
+    private String color;
 
     @OneToOne
     @JoinColumn(name = "article_id")
@@ -49,8 +49,8 @@ public class CartItem {
         }
     }
 
-    public boolean hasSameColorThan(String size2) {
-        return this.size.equals(size2);
+    public boolean hasSameColorThan(String color2) {
+        return this.color.equals(color2);
     }
 
 
@@ -95,10 +95,10 @@ public class CartItem {
     }
 
     public String getColor() {
-        return size;
+        return color;
     }
 
-    public void setColor(String size) {
-        this.size = size;
+    public void setColor(String color) {
+        this.color = color;
     }
 }
