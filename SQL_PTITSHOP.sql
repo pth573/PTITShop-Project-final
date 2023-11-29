@@ -19,6 +19,11 @@
 -- Table structure for table `address`
 --
 
+CREATE DATABASE  IF NOT EXISTS `ptitshop`;
+USE `ptitshop`;
+
+DROP TABLE IF EXISTS `ptitshop`;
+
 DROP TABLE IF EXISTS `address`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!50503 SET character_set_client = utf8mb4 */;

@@ -147,7 +147,6 @@ public class ArticleController {
 		if (picture != null && !picture.isEmpty()) {
 			// Xử lý tệp ảnh và lưu vào thư mục uploads
 			String fileName = StringUtils.cleanPath(picture.getOriginalFilename());
-//			Path uploadDir = Paths.get("C:\\Users\\datha\\Desktop\\PTITShop-Project\\eshop\\src\\main\\resources\\static\\image\\QD09");
 			Path uploadDir = Paths.get("./static/image/QD09/");
 			if (!Files.exists(uploadDir)) {
 				Files.createDirectories(uploadDir);
